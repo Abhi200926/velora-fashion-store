@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ink-950 text-cream-100 font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #e0c068 0%, #c89b2f 50%, #e0c068 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-border-gradient {
+    border-image: linear-gradient(135deg, #e0c068, #c89b2f, #e0c068) 1;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #1a1a1d;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #5a401f;
+    border-radius: 3px;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a87d24;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
