@@ -4,6 +4,7 @@ import { ProductSection } from '@/components/home/ProductSection';
 import { LuxuryBanner } from '@/components/home/LuxuryBanner';
 import { PromotionalOffers } from '@/components/home/PromotionalOffers';
 import { NewsletterSection } from '@/components/home/NewsletterSection';
+import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { products } from '@/data/products';
 
 export function HomePage() {
@@ -37,6 +38,7 @@ export function HomePage() {
         viewAllLink="/category/bestsellers"
       />
       <PromotionalOffers />
+      <TestimonialsSection />
       <NewsletterSection />
     </div>
   );
