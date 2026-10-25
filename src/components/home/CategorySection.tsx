@@ -22,7 +22,7 @@ export function CategorySection() {
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
               <h3 className="text-lg font-serif text-cream-50 group-hover:text-gold-300 transition-colors">
                 {cat.name}

@@ -41,17 +41,17 @@ export function ProductCard({ product }: ProductCardProps) {
             </span>
           )}
           {product.isNewArrival && (
-            <span className="bg-ink-950/80 backdrop-blur text-cream-100 text-xs font-medium px-2 py-1 rounded border border-gold-500/20">
+            <span className="bg-white/90 backdrop-blur text-ink-100 text-xs font-medium px-2 py-1 rounded">
               NEW
             </span>
           )}
           {product.isLuxury && (
-            <span className="bg-ink-950/80 backdrop-blur text-gold-300 text-xs font-medium px-2 py-1 rounded border border-gold-500/40">
+            <span className="bg-black/80 backdrop-blur text-gold-300 text-xs font-medium px-2 py-1 rounded border border-gold-400/40">
               LUXE
             </span>
           )}
           {outOfStock && (
-            <span className="bg-red-900/80 backdrop-blur text-cream-100 text-xs font-medium px-2 py-1 rounded">
+            <span className="bg-red-600/90 backdrop-blur text-white text-xs font-medium px-2 py-1 rounded">
               SOLD OUT
             </span>
           )}
@@ -65,8 +65,8 @@ export function ProductCard({ product }: ProductCardProps) {
           }}
           className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center backdrop-blur transition-all duration-300 ${
             wished
-              ? 'bg-gold-500 text-ink-950'
-              : 'bg-ink-950/60 text-cream-100 hover:bg-ink-950/80'
+              ? 'bg-gold-500 text-white'
+              : 'bg-black/40 text-white hover:bg-black/60'
           }`}
           aria-label="Toggle wishlist"
         >
@@ -81,14 +81,14 @@ export function ProductCard({ product }: ProductCardProps) {
               addToCart(product.id, 1, product.sizes[0], product.colors[0]);
               showToast(`${product.name} added to bag`, 'success');
             }}
-            className="flex-1 bg-ink-950/90 backdrop-blur text-cream-100 text-sm font-medium py-3 hover:bg-gold-500 hover:text-ink-950 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="flex-1 bg-black/85 backdrop-blur text-white text-sm font-medium py-3 hover:bg-gold-500 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             <ShoppingBag className="w-4 h-4" />
             Add to Bag
           </button>
           <Link
             to={`/product/${product.id}`}
-            className="bg-gold-500/90 backdrop-blur text-ink-950 text-sm font-medium py-3 px-4 hover:bg-gold-400 transition-colors flex items-center justify-center"
+            className="bg-gold-500/90 backdrop-blur text-white text-sm font-medium py-3 px-4 hover:bg-gold-400 transition-colors flex items-center justify-center"
           >
             <Eye className="w-4 h-4" />
           </Link>

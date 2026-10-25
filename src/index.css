@@ -6,10 +6,13 @@
 
 @layer base {
   body {
-    @apply bg-ink-950 text-cream-100 font-sans antialiased;
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+  }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold-500/60 ring-offset-2 ring-offset-ink-950 rounded-sm;
   }
 }
 
@@ -18,13 +21,13 @@
     text-wrap: balance;
   }
   .gold-gradient-text {
-    background: linear-gradient(135deg, #e0c068 0%, #c89b2f 50%, #e0c068 100%);
+    background: linear-gradient(135deg, #a8842f 0%, #c4a14a 50%, #a8842f 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .gold-border-gradient {
-    border-image: linear-gradient(135deg, #e0c068, #c89b2f, #e0c068) 1;
+    border-image: linear-gradient(135deg, #a8842f, #c4a14a, #a8842f) 1;
   }
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -37,14 +40,14 @@
     width: 6px;
   }
   .custom-scroll::-webkit-scrollbar-track {
-    background: #1a1a1d;
+    background: #f2efe9;
   }
   .custom-scroll::-webkit-scrollbar-thumb {
-    background: #5a401f;
+    background: #c4a14a;
     border-radius: 3px;
   }
   .custom-scroll::-webkit-scrollbar-thumb:hover {
-    background: #a87d24;
+    background: #a8842f;
   }
 }
 

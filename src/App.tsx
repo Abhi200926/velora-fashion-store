@@ -9,14 +9,17 @@ import { CartProvider } from '@/context/CartContext';
 import { WishlistProvider } from '@/context/WishlistContext';
 import { ToastProvider } from '@/context/ToastContext';
 import { RecentlyViewedProvider } from '@/context/RecentlyViewedContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import { HomePage } from '@/pages/HomePage';
 import { CategoryPage } from '@/pages/CategoryPage';
 import { ProductDetailPage } from '@/pages/ProductDetailPage';
 import { CartPage } from '@/pages/CartPage';
+import { CheckoutPage } from '@/pages/CheckoutPage';
 import { WishlistPage } from '@/pages/WishlistPage';
 import { SearchPage } from '@/pages/SearchPage';
 import { OrderTrackingPage } from '@/pages/OrderTrackingPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { StyleFinderPage } from '@/pages/StyleFinderPage';
 
 function App() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -25,40 +28,44 @@ function App() {
 
   return (
     <ToastProvider>
-      <CartProvider>
-        <WishlistProvider>
-          <RecentlyViewedProvider>
-            <div className="min-h-screen bg-ink-950 flex flex-col">
-              <AnnouncementBar />
-              <Header
-                onOpenCart={() => setCartOpen(true)}
-                onOpenSearch={() => setSearchOpen(true)}
-                onOpenMobileMenu={() => setMobileMenuOpen(true)}
-              />
-              <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      <CurrencyProvider>
+        <CartProvider>
+          <WishlistProvider>
+            <RecentlyViewedProvider>
+              <div className="min-h-screen bg-ink-950 flex flex-col">
+                <AnnouncementBar />
+                <Header
+                  onOpenCart={() => setCartOpen(true)}
+                  onOpenSearch={() => setSearchOpen(true)}
+                  onOpenMobileMenu={() => setMobileMenuOpen(true)}
+                />
+                <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/category/:slug" element={<CategoryPage />} />
-                  <Route path="/product/:id" element={<ProductDetailPage />} />
-                  <Route path="/cart" element={<CartPage />} />
-                  <Route path="/wishlist" element={<WishlistPage />} />
-                  <Route path="/search" element={<SearchPage />} />
-                  <Route path="/track-order" element={<OrderTrackingPage />} />
-                  <Route path="/account" element={<ProfilePage />} />
-                  <Route path="*" element={<HomePage />} />
-                </Routes>
-              </main>
+                <main className="flex-1">
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/category/:slug" element={<CategoryPage />} />
+                    <Route path="/product/:id" element={<ProductDetailPage />} />
+                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/checkout" element={<CheckoutPage />} />
+                    <Route path="/wishlist" element={<WishlistPage />} />
+                    <Route path="/search" element={<SearchPage />} />
+                    <Route path="/track-order" element={<OrderTrackingPage />} />
+                    <Route path="/account" element={<ProfilePage />} />
+                    <Route path="/style-finder" element={<StyleFinderPage />} />
+                    <Route path="*" element={<HomePage />} />
+                  </Routes>
+                </main>
 
-              <Footer />
+                <Footer />
 
-              <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
-              <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
-            </div>
-          </RecentlyViewedProvider>
-        </WishlistProvider>
-      </CartProvider>
+                <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
+                <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+              </div>
+            </RecentlyViewedProvider>
+          </WishlistProvider>
+        </CartProvider>
+      </CurrencyProvider>
     </ToastProvider>
   );
 }

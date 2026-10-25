@@ -27,7 +27,7 @@ export function Drawer({ open, onClose, title, children, width = 'max-w-md' }: D
   return (
     <div className="fixed inset-0 z-[90]">
       <div
-        className="absolute inset-0 bg-ink-950/70 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in"
         onClick={onClose}
       />
       <div

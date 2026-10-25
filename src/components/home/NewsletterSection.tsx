@@ -15,7 +15,7 @@ export function NewsletterSection() {
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-ink-900 to-ink-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink-800 to-ink-100" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold-500/5 rounded-full blur-3xl" />
 
       <div className="relative mx-auto max-w-2xl px-4 sm:px-6 text-center">

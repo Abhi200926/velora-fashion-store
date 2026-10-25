@@ -10,7 +10,7 @@ export function LuxuryBanner() {
           alt="Luxury collection"
           className="h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
 
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
