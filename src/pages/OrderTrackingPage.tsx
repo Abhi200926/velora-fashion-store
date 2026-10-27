@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Package, Search, MapPin, Clock, CheckCircle2, Truck, Box, ArrowRight, XCircle, AlertTriangle } from 'lucide-react';
+import { Package, Search, MapPin, Clock, CheckCircle2, Truck, Box, ArrowRight, AlertTriangle } from 'lucide-react';
 import { formatINR, getProductById } from '@/data/products';
 import { useToast } from '@/context/ToastContext';
 
@@ -228,7 +228,15 @@ export function OrderTrackingPage() {
   );
 }
 
-function OrderDetails({ order }: { order: OrderTracker }) {
+function OrderDetails({
+  order,
+  onCancel,
+  canCancel,
+}: {
+  order: OrderTracker;
+  onCancel?: () => void;
+  canCancel?: boolean;
+}) {
   const currentStepIndex = statusOrder.indexOf(order.status);
 
   return (
@@ -240,12 +248,22 @@ function OrderDetails({ order }: { order: OrderTracker }) {
             Placed on {order.date} · Tracking: {order.trackingId}
           </p>
         </div>
-        <div className="text-left sm:text-right">
-          <p className="text-2xl font-semibold text-cream-50">{formatINR(order.total)}</p>
-          <p className="text-xs text-neutral-400">
-            <Clock className="w-3.5 h-3.5 inline mr-1" />
-            Est. delivery: {order.estimatedDelivery}
-          </p>
+        <div className="flex flex-col sm:items-end gap-3">
+          <div className="text-left sm:text-right">
+            <p className="text-2xl font-semibold text-cream-50">{formatINR(order.total)}</p>
+            <p className="text-xs text-neutral-400">
+              <Clock className="w-3.5 h-3.5 inline mr-1" />
+              Est. delivery: {order.estimatedDelivery}
+            </p>
+          </div>
+          {canCancel && onCancel && (
+            <button
+              onClick={onCancel}
+              className="px-4 py-2 text-xs font-medium text-red-400 border border-red-500/30 rounded-lg hover:bg-red-500/10 transition-colors"
+            >
+              Cancel Order
+            </button>
+          )}
         </div>
       </div>
 

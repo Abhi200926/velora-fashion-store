@@ -176,7 +176,7 @@ export function CheckoutPage() {
         <ChevronRight className="w-4 h-4 text-neutral-600" />
         <span className={step === 'payment' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Payment</span>
         <ChevronRight className="w-4 h-4 text-neutral-600" />
-        <span className={step === 'confirmation' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Confirmation</span>
+        <span className={(step as Step) === 'confirmation' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Confirmation</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

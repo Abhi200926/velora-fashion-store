@@ -37,7 +37,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
 
   return (
     <div className="fixed inset-0 z-[95]">
-      <div className="absolute inset-0 bg-ink-950/80 backdrop-blur-md animate-fade-in" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-md animate-fade-in" onClick={onClose} />
       <div className="relative mx-auto max-w-2xl mt-20 px-4 animate-scale-in">
         <div className="bg-ink-900 border border-gold-500/20 rounded-2xl shadow-2xl overflow-hidden">
           <form onSubmit={handleSubmit} className="flex items-center gap-3 px-6 py-5 border-b border-ink-700">

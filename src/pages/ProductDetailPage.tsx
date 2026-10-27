@@ -109,7 +109,7 @@ export function ProductDetailPage() {
                   </span>
                 )}
                 {product.isLuxury && (
-                  <span className="absolute top-4 right-4 bg-ink-950/80 backdrop-blur text-gold-300 text-sm font-medium px-3 py-1.5 rounded border border-gold-500/40">
+                  <span className="absolute top-4 right-4 bg-black/80 backdrop-blur text-gold-300 text-sm font-medium px-3 py-1.5 rounded border border-gold-400/40">
                     LUXE
                   </span>
                 )}

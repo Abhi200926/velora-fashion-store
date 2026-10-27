@@ -3,23 +3,24 @@ import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Shield, Truck, Refre
 
 const footerLinks = {
   'Customer Support': [
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'Help Center', href: '/help' },
     { label: 'Track Order', href: '/track-order' },
     { label: 'My Account', href: '/account' },
-    { label: 'Returns & Exchange', href: '/returns' },
+    { label: 'Wishlist', href: '/wishlist' },
+    { label: 'Shopping Bag', href: '/cart' },
+    { label: 'Style Finder', href: '/style-finder' },
   ],
-  'About VELORA': [
-    { label: 'Our Story', href: '/about' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Press', href: '/press' },
-    { label: 'Sustainability', href: '/sustainability' },
+  'Shop': [
+    { label: 'New Arrivals', href: '/category/new-arrivals' },
+    { label: 'Bestsellers', href: '/category/bestsellers' },
+    { label: 'Luxury Collection', href: '/category/luxury' },
+    { label: 'Women', href: '/category/women' },
+    { label: 'Men', href: '/category/men' },
   ],
-  Policies: [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Shipping Policy', href: '/shipping' },
-    { label: 'Refund Policy', href: '/refund' },
+  'Policies': [
+    { label: 'Shipping Policy', href: '/track-order' },
+    { label: 'Returns & Exchange', href: '/track-order' },
+    { label: 'Order Tracking', href: '/track-order' },
+    { label: 'Help Center', href: '/track-order' },
   ],
 };
 

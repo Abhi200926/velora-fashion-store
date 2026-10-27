@@ -84,7 +84,7 @@ export function CategoryPage() {
       {/* Category header */}
       <div className="relative h-[200px] lg:h-[280px] overflow-hidden">
         <img src={category.image} alt={category.name} className="h-full w-full object-cover object-center" />
-        <div className="absolute inset-0 bg-ink-950/60 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <p className="text-gold-400 text-xs uppercase tracking-[0.3em] mb-2">Collection</p>
@@ -190,7 +190,7 @@ export function CategoryPage() {
       {/* Mobile filter drawer */}
       {showFilters && (
         <div className="lg:hidden fixed inset-0 z-[90]">
-          <div className="absolute inset-0 bg-ink-950/70 backdrop-blur-sm" onClick={() => setShowFilters(false)} />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowFilters(false)} />
           <div className="absolute right-0 top-0 h-full w-80 bg-ink-900 border-l border-gold-500/20 animate-slide-in-right overflow-y-auto">
             <div className="flex items-center justify-between px-5 py-4 border-b border-ink-700">
               <h3 className="text-lg font-serif text-cream-50">Filters</h3>

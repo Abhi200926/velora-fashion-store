@@ -1,10 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, RefreshCw, Check } from 'lucide-react';
+import { Sparkles, RefreshCw } from 'lucide-react';
 import { products } from '@/data/products';
-import { useCurrency } from '@/context/CurrencyContext';
 import { ProductCard } from '@/components/ProductCard';
-import type { CategorySlug } from '@/types';
 
 type Occasion = 'casual' | 'work' | 'party' | 'wedding' | 'travel' | 'festive';
 type Style = 'classic' | 'streetwear' | 'minimal' | 'bohemian' | 'luxury' | 'sporty';
@@ -94,7 +92,6 @@ function matchBudget(product: typeof products[0], budget: Budget): boolean {
 }
 
 export function StyleFinderPage() {
-  const { formatPrice } = useCurrency();
   const [occasion, setOccasion] = useState<Occasion | null>(null);
   const [style, setStyle] = useState<Style | null>(null);
   const [budget, setBudget] = useState<Budget>('all');

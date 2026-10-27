@@ -56,7 +56,7 @@ export function SizeGuideModal({ open, onClose }: SizeGuideModalProps) {
 
   return (
     <div className="fixed inset-0 z-[95] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-ink-950/80 backdrop-blur-sm animate-fade-in" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in" onClick={onClose} />
 
       <div className="relative bg-ink-900 border border-gold-500/20 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-hidden animate-scale-in flex flex-col">
         <div className="flex items-center justify-between px-6 py-4 border-b border-ink-700">
