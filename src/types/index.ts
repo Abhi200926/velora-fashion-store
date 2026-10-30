@@ -33,6 +33,20 @@ export interface Product {
   isBestseller?: boolean;
   isNewArrival?: boolean;
   isLuxury?: boolean;
+  brandSlug?: string;
+}
+
+export type BrandCategory = 'fashion' | 'sportswear' | 'technology' | 'watches' | 'luxury';
+
+export interface Brand {
+  id: string;
+  slug: string;
+  name: string;
+  description: string | null;
+  logo_url: string | null;
+  cover_url: string | null;
+  country: string | null;
+  category: BrandCategory;
 }
 
 export interface CartItem {

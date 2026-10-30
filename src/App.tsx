@@ -20,6 +20,8 @@ import { SearchPage } from '@/pages/SearchPage';
 import { OrderTrackingPage } from '@/pages/OrderTrackingPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { StyleFinderPage } from '@/pages/StyleFinderPage';
+import { BrandsPage } from '@/pages/BrandsPage';
+import { BrandPage } from '@/pages/BrandPage';
 
 function App() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -53,6 +55,8 @@ function App() {
                     <Route path="/track-order" element={<OrderTrackingPage />} />
                     <Route path="/account" element={<ProfilePage />} />
                     <Route path="/style-finder" element={<StyleFinderPage />} />
+                    <Route path="/brands" element={<BrandsPage />} />
+                    <Route path="/brand/:slug" element={<BrandPage />} />
                     <Route path="*" element={<HomePage />} />
                   </Routes>
                 </main>

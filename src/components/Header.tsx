@@ -17,6 +17,10 @@ const navLinks = [
   { label: 'Bestsellers', slug: 'bestsellers' },
 ];
 
+const brandLinks = [
+  { label: 'Brands', to: '/brands' },
+];
+
 interface HeaderProps {
   onOpenCart: () => void;
   onOpenSearch: () => void;

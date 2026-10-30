@@ -96,7 +96,15 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       <div className="flex flex-col gap-1.5 p-4">
-        <p className="text-xs text-gold-400 font-medium tracking-wide uppercase">{product.brand}</p>
+        <p className="text-xs text-gold-400 font-medium tracking-wide uppercase">
+          {product.brandSlug ? (
+            <Link to={`/brand/${product.brandSlug}`} className="hover:text-gold-300 transition-colors">
+              {product.brand}
+            </Link>
+          ) : (
+            product.brand
+          )}
+        </p>
         <Link to={`/product/${product.id}`}>
           <h3 className="text-sm text-cream-100 font-medium leading-snug hover:text-gold-300 transition-colors line-clamp-2 min-h-[2.5rem]">
             {product.name}
