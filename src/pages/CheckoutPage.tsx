@@ -7,6 +7,8 @@ import {
 import { useCart } from '@/context/CartContext';
 import { useCurrency } from '@/context/CurrencyContext';
 import { useToast } from '@/context/ToastContext';
+import { useAuth } from '@/context/AuthContext';
+import { supabase } from '@/lib/supabase';
 import { getProductById, formatINR } from '@/data/products';
 
 type PaymentMethod = 'card' | 'upi' | 'cod';
@@ -17,12 +19,12 @@ export function CheckoutPage() {
   const { items, subtotal, discount, total, deliveryFee, appliedCoupon, clearCart } = useCart();
   const { formatPrice } = useCurrency();
   const { showToast } = useToast();
+  const { user } = useAuth();
 
   const [step, setStep] = useState<Step>('address');
   const [processing, setProcessing] = useState(false);
-  const [orderId, setOrderId] = useState('');
+  const [orderResult, setOrderResult] = useState<{ id: string; total: number } | null>(null);
 
-  // Address form
   const [address, setAddress] = useState({
     fullName: '',
     phone: '',
@@ -34,7 +36,6 @@ export function CheckoutPage() {
     state: '',
   });
 
-  // Payment form
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card');
   const [card, setCard] = useState({ number: '', name: '', expiry: '', cvv: '' });
   const [upiId, setUpiId] = useState('');
@@ -71,7 +72,7 @@ export function CheckoutPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handlePaymentSubmit = (e: React.FormEvent) => {
+  const handlePaymentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (paymentMethod === 'card') {
       if (!card.number.trim() || !card.name.trim() || !card.expiry.trim() || !card.cvv.trim()) {
@@ -88,14 +89,71 @@ export function CheckoutPage() {
       return;
     }
     setProcessing(true);
-    setTimeout(() => {
-      const id = 'VEL-2026-' + Math.floor(1000 + Math.random() * 9000);
-      setOrderId(id);
+
+    try {
+      const shippingAddress = {
+        fullName: address.fullName,
+        phone: address.phone,
+        email: address.email,
+        pincode: address.pincode,
+        house: address.house,
+        area: address.area,
+        city: address.city,
+        state: address.state,
+      };
+
+      const paymentStatus = paymentMethod === 'cod' ? 'pending' : 'paid';
+      const orderInsert: Record<string, unknown> = {
+        status: 'confirmed',
+        total_amount: total,
+        subtotal,
+        discount,
+        shipping_cost: deliveryFee,
+        coupon_code: appliedCoupon?.code ?? null,
+        payment_method: paymentMethod,
+        payment_status: paymentStatus,
+        shipping_address: shippingAddress,
+      };
+
+      if (user) {
+        orderInsert.user_id = user.id;
+      }
+
+      const { data: orderData, error: orderError } = await supabase
+        .from('orders')
+        .insert(orderInsert)
+        .select('id')
+        .single();
+
+      if (orderError) throw orderError;
+
+      const orderItems = items.map(item => {
+        const product = getProductById(item.productId);
+        return {
+          order_id: orderData.id,
+          product_id: item.productId,
+          product_name: product?.name ?? 'Unknown',
+          product_image: product?.image ?? null,
+          brand: product?.brand ?? '',
+          quantity: item.quantity,
+          size: item.size,
+          color: item.color,
+          price: product?.price ?? 0,
+        };
+      });
+
+      const { error: itemsError } = await supabase.from('order_items').insert(orderItems);
+      if (itemsError) throw itemsError;
+
+      setOrderResult({ id: orderData.id.slice(0, 8).toUpperCase(), total });
       setProcessing(false);
       setStep('confirmation');
       clearCart();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 2200);
+    } catch (err) {
+      setProcessing(false);
+      showToast(err instanceof Error ? err.message : 'Failed to place order', 'error');
+    }
   };
 
   const formatCardNumber = (val: string) => {
@@ -109,7 +167,7 @@ export function CheckoutPage() {
     return digits;
   };
 
-  if (step === 'confirmation') {
+  if (step === 'confirmation' && orderResult) {
     return (
       <div className="min-h-screen mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-8">
@@ -126,11 +184,11 @@ export function CheckoutPage() {
           <div className="flex justify-between items-center pb-4 border-b border-ink-700">
             <div>
               <p className="text-xs text-neutral-400">Order Number</p>
-              <p className="text-lg font-serif text-gold-400">{orderId}</p>
+              <p className="text-lg font-serif text-gold-400">{orderResult.id}</p>
             </div>
             <div className="text-right">
               <p className="text-xs text-neutral-400">Amount Paid</p>
-              <p className="text-lg font-semibold text-cream-50">{formatPrice(total)}</p>
+              <p className="text-lg font-semibold text-cream-50">{formatPrice(orderResult.total)}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -170,17 +228,15 @@ export function CheckoutPage() {
       </Link>
       <h1 className="text-3xl font-serif text-cream-50 mb-2">Checkout</h1>
 
-      {/* Stepper */}
       <div className="flex items-center gap-2 mb-8 text-sm">
         <span className={step === 'address' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Address</span>
         <ChevronRight className="w-4 h-4 text-neutral-600" />
         <span className={step === 'payment' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Payment</span>
         <ChevronRight className="w-4 h-4 text-neutral-600" />
-        <span className={(step as Step) === 'confirmation' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Confirmation</span>
+        <span className={step === 'confirmation' ? 'text-gold-400 font-medium' : 'text-neutral-500'}>Confirmation</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left: Forms */}
         <div className="lg:col-span-2 space-y-6">
           {step === 'address' && (
             <form onSubmit={handleAddressSubmit} className="bg-ink-900 border border-ink-700/50 rounded-xl p-6 space-y-5 animate-fade-in">
@@ -215,16 +271,8 @@ export function CheckoutPage() {
                 <Lock className="w-5 h-5 text-gold-400" />
                 <h2 className="text-lg font-serif text-cream-50">Payment Method</h2>
               </div>
-
-              {/* Method selector */}
               <div className="space-y-3">
-                <PaymentOption
-                  active={paymentMethod === 'card'}
-                  onClick={() => setPaymentMethod('card')}
-                  icon={CreditCard}
-                  title="Credit / Debit Card"
-                  subtitle="Visa, Mastercard, RuPay, Amex"
-                />
+                <PaymentOption active={paymentMethod === 'card'} onClick={() => setPaymentMethod('card')} icon={CreditCard} title="Credit / Debit Card" subtitle="Visa, Mastercard, RuPay, Amex" />
                 {paymentMethod === 'card' && (
                   <div className="bg-ink-800/50 border border-ink-700 rounded-lg p-4 space-y-4 animate-fade-in">
                     <Field label="Card Number" value={card.number} onChange={v => setCard({ ...card, number: formatCardNumber(v) })} placeholder="1234 5678 9012 3456" />
@@ -235,64 +283,32 @@ export function CheckoutPage() {
                     </div>
                   </div>
                 )}
-
-                <PaymentOption
-                  active={paymentMethod === 'upi'}
-                  onClick={() => setPaymentMethod('upi')}
-                  icon={Smartphone}
-                  title="UPI"
-                  subtitle="Google Pay, PhonePe, Paytm, BHIM"
-                />
+                <PaymentOption active={paymentMethod === 'upi'} onClick={() => setPaymentMethod('upi')} icon={Smartphone} title="UPI" subtitle="Google Pay, PhonePe, Paytm, BHIM" />
                 {paymentMethod === 'upi' && (
                   <div className="bg-ink-800/50 border border-ink-700 rounded-lg p-4 space-y-4 animate-fade-in">
                     <Field label="UPI ID" value={upiId} onChange={setUpiId} placeholder="aarav@okhdfcbank" />
                     <div className="flex flex-wrap gap-2">
                       {['@okhdfcbank', '@oksbi', '@okaxis', '@ybl'].map(suffix => (
-                        <button
-                          key={suffix}
-                          type="button"
-                          onClick={() => setUpiId(prev => prev.includes('@') ? prev : prev + suffix)}
-                          className="text-xs px-3 py-1.5 bg-ink-700 text-neutral-300 rounded-full hover:bg-ink-600 transition-colors"
-                        >
+                        <button key={suffix} type="button" onClick={() => setUpiId(prev => prev.includes('@') ? prev : prev + suffix)} className="text-xs px-3 py-1.5 bg-ink-700 text-neutral-300 rounded-full hover:bg-ink-600 transition-colors">
                           {suffix}
                         </button>
                       ))}
                     </div>
                   </div>
                 )}
-
-                <PaymentOption
-                  active={paymentMethod === 'cod'}
-                  onClick={() => setPaymentMethod('cod')}
-                  icon={Wallet}
-                  title="Cash on Delivery"
-                  subtitle="Pay in cash when your order arrives"
-                />
+                <PaymentOption active={paymentMethod === 'cod'} onClick={() => setPaymentMethod('cod')} icon={Wallet} title="Cash on Delivery" subtitle="Pay in cash when your order arrives" />
               </div>
-
               <div className="flex items-center gap-2 text-xs text-neutral-400 pt-2">
                 <ShieldCheck className="w-4 h-4 text-green-400" />
-                Your payment information is encrypted and secure.
+                Your payment information is encrypted and secure. This is a test transaction — no real charges will be made.
               </div>
-
               <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => setStep('address')}
-                  className="px-6 py-3.5 bg-ink-800 border border-ink-700 text-cream-100 text-sm font-medium rounded-lg hover:border-gold-500/40 transition-colors"
-                >
+                <button type="button" onClick={() => setStep('address')} className="px-6 py-3.5 bg-ink-800 border border-ink-700 text-cream-100 text-sm font-medium rounded-lg hover:border-gold-500/40 transition-colors">
                   Back
                 </button>
-                <button
-                  type="submit"
-                  disabled={processing}
-                  className="flex-1 py-3.5 bg-gold-500 text-ink-950 text-sm font-semibold rounded-lg hover:bg-gold-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                >
+                <button type="submit" disabled={processing} className="flex-1 py-3.5 bg-gold-500 text-ink-950 text-sm font-semibold rounded-lg hover:bg-gold-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                   {processing ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Processing Payment...
-                    </>
+                    <><Loader2 className="w-4 h-4 animate-spin" />Processing Payment...</>
                   ) : (
                     <>Pay {formatPrice(total)}</>
                   )}
@@ -302,12 +318,9 @@ export function CheckoutPage() {
           )}
         </div>
 
-        {/* Right: Order summary */}
         <div className="lg:col-span-1">
           <div className="sticky top-24 bg-ink-900 border border-ink-700/50 rounded-xl p-6 space-y-4">
             <h2 className="text-xl font-serif text-cream-50">Order Summary</h2>
-
-            {/* Items */}
             <div className="space-y-3 max-h-64 overflow-y-auto custom-scroll pr-1">
               {items.map(item => {
                 const product = getProductById(item.productId);
@@ -325,24 +338,13 @@ export function CheckoutPage() {
                 );
               })}
             </div>
-
             <div className="border-t border-ink-700 pt-4 space-y-2.5 text-sm">
-              <div className="flex justify-between text-neutral-300">
-                <span>Subtotal</span>
-                <span>{formatPrice(subtotal)}</span>
-              </div>
+              <div className="flex justify-between text-neutral-300"><span>Subtotal</span><span>{formatPrice(subtotal)}</span></div>
               {discount > 0 && (
-                <div className="flex justify-between text-green-400">
-                  <span>Discount {appliedCoupon && `(${appliedCoupon.code})`}</span>
-                  <span>−{formatPrice(discount)}</span>
-                </div>
+                <div className="flex justify-between text-green-400"><span>Discount {appliedCoupon && `(${appliedCoupon.code})`}</span><span>−{formatPrice(discount)}</span></div>
               )}
-              <div className="flex justify-between text-neutral-300">
-                <span>Delivery Fee</span>
-                <span>{deliveryFee === 0 ? <span className="text-green-400">FREE</span> : formatPrice(deliveryFee)}</span>
-              </div>
+              <div className="flex justify-between text-neutral-300"><span>Delivery Fee</span><span>{deliveryFee === 0 ? <span className="text-green-400">FREE</span> : formatPrice(deliveryFee)}</span></div>
             </div>
-
             <div className="border-t border-ink-700 pt-4">
               <div className="flex justify-between items-baseline">
                 <span className="text-lg font-medium text-cream-100">Total</span>
@@ -357,50 +359,26 @@ export function CheckoutPage() {
   );
 }
 
-function Field({
-  label, value, onChange, placeholder, type = 'text',
-}: {
-  label: string; value: string; onChange: (v: string) => void; placeholder?: string; type?: string;
-}) {
+function Field({ label, value, onChange, placeholder, type = 'text' }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string; type?: string }) {
   return (
     <div>
       <label className="block text-xs text-neutral-400 mb-1.5">{label}</label>
-      <input
-        type={type}
-        value={value}
-        onChange={e => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full bg-ink-800 border border-ink-700 rounded-lg px-3 py-2.5 text-sm text-cream-100 placeholder-neutral-500 focus:outline-none focus:border-gold-500/50 transition-colors"
-      />
+      <input type={type} value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder} className="w-full bg-ink-800 border border-ink-700 rounded-lg px-3 py-2.5 text-sm text-cream-100 placeholder-neutral-500 focus:outline-none focus:border-gold-500/50 transition-colors" />
     </div>
   );
 }
 
-function PaymentOption({
-  active, onClick, icon: Icon, title, subtitle,
-}: {
-  active: boolean; onClick: () => void; icon: typeof CreditCard; title: string; subtitle: string;
-}) {
+function PaymentOption({ active, onClick, icon: Icon, title, subtitle }: { active: boolean; onClick: () => void; icon: typeof CreditCard; title: string; subtitle: string }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`w-full flex items-center gap-3 p-4 border rounded-lg transition-all text-left ${
-        active ? 'border-gold-500/50 bg-gold-500/5' : 'border-ink-700 bg-ink-800/30 hover:border-ink-600'
-      }`}
-    >
-      <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
-        active ? 'bg-gold-500 text-ink-950' : 'bg-ink-700 text-neutral-400'
-      }`}>
+    <button type="button" onClick={onClick} className={`w-full flex items-center gap-3 p-4 border rounded-lg transition-all text-left ${active ? 'border-gold-500/50 bg-gold-500/5' : 'border-ink-700 bg-ink-800/30 hover:border-ink-600'}`}>
+      <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${active ? 'bg-gold-500 text-ink-950' : 'bg-ink-700 text-neutral-400'}`}>
         <Icon className="w-5 h-5" />
       </div>
       <div className="flex-1 min-w-0">
         <p className={`text-sm font-medium ${active ? 'text-gold-400' : 'text-cream-100'}`}>{title}</p>
         <p className="text-xs text-neutral-500">{subtitle}</p>
       </div>
-      <div className={`w-5 h-5 rounded-full border-2 shrink-0 ${
-        active ? 'border-gold-500 bg-gold-500' : 'border-ink-600'
-      }`}>
+      <div className={`w-5 h-5 rounded-full border-2 shrink-0 ${active ? 'border-gold-500 bg-gold-500' : 'border-ink-600'}`}>
         {active && <Check className="w-3 h-3 text-ink-950 mx-auto mt-0.5" />}
       </div>
     </button>

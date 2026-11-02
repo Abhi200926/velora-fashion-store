@@ -10,6 +10,7 @@ import { WishlistProvider } from '@/context/WishlistContext';
 import { ToastProvider } from '@/context/ToastContext';
 import { RecentlyViewedProvider } from '@/context/RecentlyViewedContext';
 import { CurrencyProvider } from '@/context/CurrencyContext';
+import { AuthProvider } from '@/context/AuthContext';
 import { HomePage } from '@/pages/HomePage';
 import { CategoryPage } from '@/pages/CategoryPage';
 import { ProductDetailPage } from '@/pages/ProductDetailPage';
@@ -22,6 +23,8 @@ import { ProfilePage } from '@/pages/ProfilePage';
 import { StyleFinderPage } from '@/pages/StyleFinderPage';
 import { BrandsPage } from '@/pages/BrandsPage';
 import { BrandPage } from '@/pages/BrandPage';
+import { AuthPage } from '@/pages/AuthPage';
+import { AdminPage } from '@/pages/AdminPage';
 
 function App() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -31,44 +34,48 @@ function App() {
   return (
     <ToastProvider>
       <CurrencyProvider>
-        <CartProvider>
-          <WishlistProvider>
-            <RecentlyViewedProvider>
-              <div className="min-h-screen bg-ink-950 flex flex-col">
-                <AnnouncementBar />
-                <Header
-                  onOpenCart={() => setCartOpen(true)}
-                  onOpenSearch={() => setSearchOpen(true)}
-                  onOpenMobileMenu={() => setMobileMenuOpen(true)}
-                />
-                <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <RecentlyViewedProvider>
+                <div className="min-h-screen bg-ink-950 flex flex-col">
+                  <AnnouncementBar />
+                  <Header
+                    onOpenCart={() => setCartOpen(true)}
+                    onOpenSearch={() => setSearchOpen(true)}
+                    onOpenMobileMenu={() => setMobileMenuOpen(true)}
+                  />
+                  <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
-                <main className="flex-1">
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/category/:slug" element={<CategoryPage />} />
-                    <Route path="/product/:id" element={<ProductDetailPage />} />
-                    <Route path="/cart" element={<CartPage />} />
-                    <Route path="/checkout" element={<CheckoutPage />} />
-                    <Route path="/wishlist" element={<WishlistPage />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/track-order" element={<OrderTrackingPage />} />
-                    <Route path="/account" element={<ProfilePage />} />
-                    <Route path="/style-finder" element={<StyleFinderPage />} />
-                    <Route path="/brands" element={<BrandsPage />} />
-                    <Route path="/brand/:slug" element={<BrandPage />} />
-                    <Route path="*" element={<HomePage />} />
-                  </Routes>
-                </main>
+                  <main className="flex-1">
+                    <Routes>
+                      <Route path="/" element={<HomePage />} />
+                      <Route path="/category/:slug" element={<CategoryPage />} />
+                      <Route path="/product/:id" element={<ProductDetailPage />} />
+                      <Route path="/cart" element={<CartPage />} />
+                      <Route path="/checkout" element={<CheckoutPage />} />
+                      <Route path="/wishlist" element={<WishlistPage />} />
+                      <Route path="/search" element={<SearchPage />} />
+                      <Route path="/track-order" element={<OrderTrackingPage />} />
+                      <Route path="/account" element={<ProfilePage />} />
+                      <Route path="/auth" element={<AuthPage />} />
+                      <Route path="/style-finder" element={<StyleFinderPage />} />
+                      <Route path="/brands" element={<BrandsPage />} />
+                      <Route path="/brand/:slug" element={<BrandPage />} />
+                      <Route path="/admin" element={<AdminPage />} />
+                      <Route path="*" element={<HomePage />} />
+                    </Routes>
+                  </main>
 
-                <Footer />
+                  <Footer />
 
-                <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
-                <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
-              </div>
-            </RecentlyViewedProvider>
-          </WishlistProvider>
-        </CartProvider>
+                  <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
+                  <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+                </div>
+              </RecentlyViewedProvider>
+            </WishlistProvider>
+          </CartProvider>
+        </AuthProvider>
       </CurrencyProvider>
     </ToastProvider>
   );
