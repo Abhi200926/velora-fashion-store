@@ -11,7 +11,7 @@ import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { getProductById, formatINR } from '@/data/products';
 
-type PaymentMethod = 'card' | 'upi' | 'cod';
+type PaymentMethod = 'upi' | 'card' | 'netbanking' | 'cod';
 type Step = 'address' | 'payment' | 'confirmation';
 
 export function CheckoutPage() {
@@ -37,8 +37,6 @@ export function CheckoutPage() {
   });
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card');
-  const [card, setCard] = useState({ number: '', name: '', expiry: '', cvv: '' });
-  const [upiId, setUpiId] = useState('');
 
   if (items.length === 0 && step !== 'confirmation') {
     return (
@@ -74,18 +72,9 @@ export function CheckoutPage() {
 
   const handlePaymentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (paymentMethod === 'card') {
-      if (!card.number.trim() || !card.name.trim() || !card.expiry.trim() || !card.cvv.trim()) {
-        showToast('Please fill in all card details', 'error');
-        return;
-      }
-      if (card.number.replace(/\s/g, '').length < 15) {
-        showToast('Please enter a valid card number', 'error');
-        return;
-      }
-    }
-    if (paymentMethod === 'upi' && !upiId.includes('@')) {
-      showToast('Please enter a valid UPI ID (e.g. name@bank)', 'error');
+    if (!user) {
+      showToast('Please sign in before placing an order.', 'error');
+      navigate('/auth');
       return;
     }
     setProcessing(true);
@@ -102,21 +91,19 @@ export function CheckoutPage() {
         state: address.state,
       };
 
-      const paymentStatus = paymentMethod === 'cod' ? 'pending' : 'paid';
+      const isCod = paymentMethod === 'cod';
       const orderInsert: Record<string, unknown> = {
-        status: 'confirmed',
+        status: isCod ? 'confirmed' : 'pending',
         total_amount: total,
         subtotal,
         discount,
         shipping_cost: deliveryFee,
         coupon_code: appliedCoupon?.code ?? null,
         payment_method: paymentMethod,
-        payment_status: paymentStatus,
+        payment_status: 'pending',
+        payment_provider: isCod ? 'cod' : 'razorpay',
         shipping_address: shippingAddress,
-      };
-
-      if (user) {
-        orderInsert.user_id = user.id;
+        user_id: user.id,
       }
 
       const { data: orderData, error: orderError } = await supabase
@@ -145,26 +132,70 @@ export function CheckoutPage() {
       const { error: itemsError } = await supabase.from('order_items').insert(orderItems);
       if (itemsError) throw itemsError;
 
+      if (!isCod) {
+        await openRazorpayCheckout(orderData.id, address);
+        setProcessing(false);
+        return;
+      }
+
       setOrderResult({ id: orderData.id.slice(0, 8).toUpperCase(), total });
       setProcessing(false);
       setStep('confirmation');
       clearCart();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch (err) {
+    } catch (_err) {
       setProcessing(false);
-      showToast(err instanceof Error ? err.message : 'Failed to place order', 'error');
+      showToast('We could not start this payment. Please try again.', 'error');
     }
   };
 
-  const formatCardNumber = (val: string) => {
-    const digits = val.replace(/\D/g, '').slice(0, 16);
-    return digits.replace(/(.{4})/g, '$1 ').trim();
-  };
+  const openRazorpayCheckout = async (orderId: string, shipping: typeof address) => {
+    const { data, error } = await supabase.functions.invoke('create-payment-order', { body: { orderId } });
+    if (error || !data?.razorpayOrderId || !data?.keyId) {
+      throw new Error(data?.error ?? 'Payment gateway is not configured yet.');
+    }
 
-  const formatExpiry = (val: string) => {
-    const digits = val.replace(/\D/g, '').slice(0, 4);
-    if (digits.length >= 3) return digits.slice(0, 2) + '/' + digits.slice(2);
-    return digits;
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    await new Promise<void>((resolve, reject) => {
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Payment gateway could not be loaded.'));
+      document.body.appendChild(script);
+    });
+    if (!window.Razorpay) throw new Error('Payment gateway could not be loaded.');
+
+    const razorpay = new window.Razorpay({
+      key: data.keyId,
+      amount: data.amount,
+      currency: data.currency,
+      name: 'LUXORA',
+      description: 'LUXORA marketplace order',
+      order_id: data.razorpayOrderId,
+      prefill: { name: shipping.fullName, email: shipping.email, contact: shipping.phone },
+      theme: { color: '#d7ad5b' },
+      method: { upi: true, card: true, netbanking: true },
+      handler: async response => {
+        const result = await supabase.functions.invoke('verify-payment', {
+          body: {
+            orderId,
+            razorpayOrderId: response.razorpay_order_id,
+            razorpayPaymentId: response.razorpay_payment_id,
+            razorpaySignature: response.razorpay_signature,
+          },
+        });
+        if (result.error || !result.data?.verified) {
+          showToast('Payment received but verification is still pending. Please check your order shortly.', 'error');
+          return;
+        }
+        setOrderResult({ id: orderId.slice(0, 8).toUpperCase(), total });
+        setStep('confirmation');
+        clearCart();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      modal: { ondismiss: () => showToast('Payment cancelled. Your order remains pending.', 'error') },
+    });
+    razorpay.open();
   };
 
   if (step === 'confirmation' && orderResult) {
