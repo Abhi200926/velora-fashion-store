@@ -79,9 +79,9 @@ export function Header({ onOpenCart, onOpenSearch, onOpenMobileMenu }: HeaderPro
             <Menu className="w-6 h-6" />
           </button>
 
-          <Link to="/" className="flex items-center gap-2 group" aria-label="VELORA home">
+          <Link to="/" className="flex items-center gap-2 group" aria-label="LUXORA home">
             <span className="text-2xl lg:text-3xl font-serif font-semibold tracking-wider gold-gradient-text">
-              VELORA
+              LUXORA
             </span>
           </Link>
 
@@ -219,7 +219,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in" onClick={onClose} />
       <div className="absolute left-0 top-0 h-full w-72 bg-ink-900 border-r border-gold-500/20 shadow-2xl animate-slide-in-right flex flex-col">
         <div className="flex items-center justify-between border-b border-ink-700 px-5 py-4">
-          <span className="text-2xl font-serif gold-gradient-text">VELORA</span>
+          <span className="text-2xl font-serif gold-gradient-text">LUXORA</span>
           <button
             onClick={onClose}
             className="w-8 h-8 rounded-full flex items-center justify-center text-ink-400 hover:text-ink-100 transition-colors"

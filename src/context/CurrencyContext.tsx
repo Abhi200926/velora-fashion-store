@@ -17,7 +17,7 @@ const CURRENCIES: Record<CurrencyCode, CurrencyInfo> = {
   AED: { code: 'AED', symbol: 'AED ', label: 'AED', rate: 0.044 },
 };
 
-const STORAGE_KEY = 'velora-currency';
+const STORAGE_KEY = 'luxora-currency';
 
 interface CurrencyContextValue {
   currency: CurrencyCode;

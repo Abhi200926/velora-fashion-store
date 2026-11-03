@@ -3,7 +3,7 @@
 
 ## Purpose
 Introduces a brand-aware product catalog backed by Supabase, enabling the store to feature
-world-class brands (Nike, Apple, Gucci, etc.) alongside the existing hardcoded VELORA catalog.
+world-class brands (Nike, Apple, Gucci, etc.) alongside the existing hardcoded LUXORA catalog.
 Structured for easy expansion to hundreds of products.
 
 ## New Tables

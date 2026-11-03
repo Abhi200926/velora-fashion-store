@@ -55,7 +55,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-serif gold-gradient-text mb-3">VELORA</h3>
+            <h3 className="text-2xl font-serif gold-gradient-text mb-3">LUXORA</h3>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-xs">
               Style That Speaks. Discover affordable everyday fashion and premium luxury pieces, curated for the modern Indian wardrobe.
             </p>
@@ -101,11 +101,11 @@ export function Footer() {
               <Phone className="w-3.5 h-3.5" /> +91 80 4567 8900
             </span>
             <span className="flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5" /> care@velora.in
+              <Mail className="w-3.5 h-3.5" /> care@luxora.in
             </span>
           </div>
           <p className="text-xs text-neutral-500">
-            © 2026 VELORA Fashion Pvt. Ltd. All rights reserved.
+            © 2026 LUXORA Fashion Pvt. Ltd. All rights reserved.
           </p>
         </div>
       </div>

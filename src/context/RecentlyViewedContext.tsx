@@ -7,7 +7,7 @@ interface RecentlyViewedContextValue {
 }
 
 const RecentlyViewedContext = createContext<RecentlyViewedContextValue | null>(null);
-const STORAGE_KEY = 'velora-recently-viewed';
+const STORAGE_KEY = 'luxora-recently-viewed';
 const MAX_ITEMS = 12;
 
 export function RecentlyViewedProvider({ children }: { children: ReactNode }) {

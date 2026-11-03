@@ -20,8 +20,8 @@ interface CartContextValue {
 
 const CartContext = createContext<CartContextValue | null>(null);
 
-const STORAGE_KEY = 'velora-cart';
-const COUPON_KEY = 'velora-coupon';
+const STORAGE_KEY = 'luxora-cart';
+const COUPON_KEY = 'luxora-coupon';
 
 function loadFromStorage<T>(key: string, fallback: T): T {
   try {
@@ -93,7 +93,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const applyCoupon = useCallback((code: string): { success: boolean; message: string } => {
     const upper = code.toUpperCase().trim();
     const coupon = coupons.find(c => c.code === upper);
-    if (!coupon) return { success: false, message: 'Invalid coupon code. Try VELORA10, WELCOME5, FASHION15, LUXE20, NEW25, FESTIVE30, or PREMIER50.' };
+    if (!coupon) return { success: false, message: 'Invalid coupon code. Try LUXORA10, WELCOME5, FASHION15, LUXE20, NEW25, FESTIVE30, or PREMIER50.' };
     if (subtotal < coupon.minOrder) {
       return { success: false, message: `Minimum order of ₹${coupon.minOrder.toLocaleString('en-IN')} required for ${coupon.code}.` };
     }

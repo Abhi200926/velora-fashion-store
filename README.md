@@ -1,12 +1,12 @@
-# VELORA — Fashion Store
+# LUXORA — Premium Marketplace
 
 **Style That Speaks.**
 
-VELORA is a modern fashion website project focused on providing a stylish and user-friendly fashion discovery experience.
+LUXORA is a modern premium marketplace project focused on providing a stylish and user-friendly fashion discovery experience.
 
 ## 🌐 Live Website
 
-https://velora-fashion-store-8a1onde8h-abhi200926.vercel.app/
+Deployment URL: configured externally
 
 ## ✨ Features
 
@@ -34,13 +34,13 @@ Install Node.js and npm.
 Clone the repository:
 
 ```bash
-git clone https://github.com/Abhi200926/velora-fashion-store.git
+Clone the project from its configured repository URL.
 ```
 
 Navigate to the project folder:
 
 ```bash
-cd velora-fashion-store
+cd luxora
 ```
 
 Install dependencies:
@@ -71,18 +71,18 @@ npm run build
 
 ## ⚠️ Limitations
 
-VELORA is a fashion website project. Features such as real payments, user authentication, order processing, and live inventory updates should not be assumed to work unless implemented and tested.
+LUXORA is a premium marketplace project. Features such as real payments, user authentication, order processing, and live inventory updates should not be assumed to work unless implemented and tested.
 
 Product prices and availability should be verified with the relevant retailer.
 
 ## 🔗 Project Links
 
-- **Live Website:** https://velora-fashion-store-8a1onde8h-abhi200926.vercel.app/
-- **GitHub Repository:** https://github.com/Abhi200926/velora-fashion-store
+- **Live Website:** Deployment URL: configured externally
+- **GitHub Repository:** configured externally
 
 ---
 
-**VELORA — Style That Speaks.**
+**LUXORA — The World of Premium Shopping.**
 
 
 

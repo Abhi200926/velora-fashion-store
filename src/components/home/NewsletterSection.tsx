@@ -23,7 +23,7 @@ export function NewsletterSection() {
           <Mail className="w-7 h-7 text-gold-400" />
         </div>
         <h2 className="text-3xl sm:text-4xl font-serif text-cream-50 mb-3">
-          Join the VELORA Circle
+          Join the LUXORA Circle
         </h2>
         <p className="text-sm text-neutral-400 mb-8 max-w-md mx-auto leading-relaxed">
           Subscribe to get exclusive access to new arrivals, private sales, and a special welcome discount of 15% on your first order.

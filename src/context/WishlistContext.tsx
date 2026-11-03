@@ -9,7 +9,7 @@ interface WishlistContextValue {
 }
 
 const WishlistContext = createContext<WishlistContextValue | null>(null);
-const STORAGE_KEY = 'velora-wishlist';
+const STORAGE_KEY = 'luxora-wishlist';
 
 export function WishlistProvider({ children }: { children: ReactNode }) {
   const [wishlist, setWishlist] = useState<number[]>(() => {

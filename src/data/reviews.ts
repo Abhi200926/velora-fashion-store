@@ -31,10 +31,10 @@ const comments = [
   'Great value for money. The packaging was elegant and the product exceeded my expectations.',
   'Been using this for a month now and it still looks brand new. Excellent craftsmanship.',
   'The fit is true to size. I was initially skeptical but this has become my favorite piece.',
-  'Premium feel at an affordable price point. VELORA never disappoints with their quality.',
+  'Premium feel at an affordable price point. LUXORA never disappoints with their quality.',
   'Perfect for daily wear as well as special occasions. Versatile and stylish.',
   'The detailing on this piece is remarkable. You can tell it\'s made with care.',
-  'Fast delivery, great packaging, and an amazing product. Will definitely shop again from VELORA.',
+  'Fast delivery, great packaging, and an amazing product. Will definitely shop again from LUXORA.',
   'Bought as a gift and the recipient loved it. The presentation was beautiful.',
   'Comfortable, stylish, and well-made. What more could you ask for?',
 ];

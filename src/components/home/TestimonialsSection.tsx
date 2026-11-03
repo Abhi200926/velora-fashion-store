@@ -5,7 +5,7 @@ const testimonials = [
     name: 'Ananya Reddy',
     location: 'Mumbai',
     rating: 5,
-    text: 'The quality of VELORA\'s pieces exceeded my expectations. The stitching, the fabric, the packaging — everything feels premium. My go-to for occasion wear now.',
+    text: 'The quality of LUXORA\'s pieces exceeded my expectations. The stitching, the fabric, the packaging — everything feels premium. My go-to for occasion wear now.',
     product: 'Midnight Elegance Dress',
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     name: 'Priya Nair',
     location: 'Delhi',
     rating: 4,
-    text: 'Beautiful collections and incredibly fast delivery. The size guide was spot on and the return process was hassle-free. VELORA has become my favourite fashion destination.',
+    text: 'Beautiful collections and incredibly fast delivery. The size guide was spot on and the return process was hassle-free. LUXORA has become my favourite fashion destination.',
     product: 'Quilted Luxe Handbag',
   },
 ];

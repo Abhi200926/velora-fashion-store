@@ -7,7 +7,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src="https://images.pexels.com/photos/33714925/pexels-photo-33714925.jpeg?auto=compress&cs=tinysrgb&h=1400&w=2000"
-          alt="VELORA Autumn/Winter 2026 editorial fashion campaign"
+          alt="LUXORA Autumn/Winter 2026 editorial fashion campaign"
           className="h-full w-full object-cover object-center"
           fetchPriority="high"
         />
@@ -18,7 +18,7 @@ export function Hero() {
       <div className="relative h-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="max-w-2xl animate-fade-in-up">
           <p className="text-gold-300 text-sm font-medium uppercase tracking-[0.3em] mb-4">
-            VELORA · Autumn / Winter 2026
+            LUXORA · Autumn / Winter 2026
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.05] text-balance">
             Elegance is

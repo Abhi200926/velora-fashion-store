@@ -3,7 +3,7 @@ import { Truck, Sparkles } from 'lucide-react';
 
 const messages = [
   'Free shipping on all orders above ₹999 — Shop now!',
-  'Use code VELORA10 for 10% off your first order',
+  'Use code LUXORA10 for 10% off your first order',
   'New Arrivals just dropped — Explore the latest trends',
   'Luxury Collection: Exclusive pieces now available',
 ];
