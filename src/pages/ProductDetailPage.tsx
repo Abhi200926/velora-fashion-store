@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Heart, ShoppingBag, Minus, Plus, Truck, RefreshCw, Shield, ChevronRight, Clock } from 'lucide-react';
-import { getProductById, products, formatINR, getDiscountPercent } from '@/data/products';
+import { formatINR, getDiscountPercent } from '@/data/products';
+import { useCatalog } from '@/data/catalog';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useToast } from '@/context/ToastContext';
@@ -15,7 +16,8 @@ export function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const productId = Number(id);
-  const product = getProductById(productId);
+  const { products, loading } = useCatalog();
+  const product = products.find(item => item.id === productId);
 
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [selectedColor, setSelectedColor] = useState<string>('');
@@ -39,6 +41,10 @@ export function ProductDetailPage() {
     window.scrollTo(0, 0);
   }, [productId, product, addProduct]);
 
+  if (loading) {
+    return <div className="min-h-[60vh] flex items-center justify-center text-sm text-neutral-400">Loading product...</div>;
+  }
+
   if (!product) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-4">
@@ -60,8 +66,8 @@ export function ProductDetailPage() {
 
   const recentlyViewedIds = getRecent(product.id, 4);
   const recentlyViewedProducts = recentlyViewedIds
-    .map(pid => getProductById(pid))
-    .filter((p): p is NonNullable<typeof p> => p !== null);
+    .map(pid => products.find(item => item.id === pid))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined);
 
   const handleAddToCart = () => {
     if (outOfStock) return;

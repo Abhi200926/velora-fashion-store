@@ -2,7 +2,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SlidersHorizontal, ChevronDown, X } from 'lucide-react';
 import type { SortOption } from '@/types';
-import { getProductsByCategory, categories } from '@/data/products';
+import { categories } from '@/data/products';
+import { useProductsByCategory } from '@/data/catalog';
 import { ProductCard } from '@/components/ProductCard';
 
 const sortOptions: { value: SortOption; label: string }[] = [
@@ -19,14 +20,16 @@ export function CategoryPage() {
   const [sortOpen, setSortOpen] = useState(false);
   const [priceRange, setPriceRange] = useState<{ min: number; max: number }>({ min: 0, max: 15000 });
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
 
   const category = categories.find(c => c.slug === slug);
-  const allProducts = useMemo(() => getProductsByCategory(slug), [slug]);
+  const { products: allProducts } = useProductsByCategory(slug);
 
   useEffect(() => {
     setSort('popularity');
     setSelectedColors([]);
+    setSelectedBrands([]);
     setPriceRange({ min: 0, max: 15000 });
   }, [slug]);
 
@@ -36,12 +39,20 @@ export function CategoryPage() {
     return Array.from(colors).sort();
   }, [allProducts]);
 
+  const availableBrands = useMemo(() => {
+    const brands = new Set(allProducts.map(product => product.brand));
+    return Array.from(brands).sort((a, b) => a.localeCompare(b));
+  }, [allProducts]);
+
   const filteredProducts = useMemo(() => {
     let result = allProducts.filter(
       p => p.price >= priceRange.min && p.price <= priceRange.max,
     );
     if (selectedColors.length > 0) {
       result = result.filter(p => p.colors.some(c => selectedColors.includes(c)));
+    }
+    if (selectedBrands.length > 0) {
+      result = result.filter(p => selectedBrands.includes(p.brand));
     }
     switch (sort) {
       case 'price-low':
@@ -60,7 +71,7 @@ export function CategoryPage() {
         result = [...result].sort((a, b) => b.reviewCount - a.reviewCount);
     }
     return result;
-  }, [allProducts, sort, priceRange, selectedColors]);
+  }, [allProducts, sort, priceRange, selectedColors, selectedBrands]);
 
   const toggleColor = (color: string) => {
     setSelectedColors(prev =>
@@ -150,6 +161,9 @@ export function CategoryPage() {
                 availableColors={availableColors}
                 selectedColors={selectedColors}
                 toggleColor={toggleColor}
+                availableBrands={availableBrands}
+                selectedBrands={selectedBrands}
+                toggleBrand={brand => setSelectedBrands(prev => prev.includes(brand) ? prev.filter(item => item !== brand) : [...prev, brand])}
                 priceRange={priceRange}
                 setPriceRange={setPriceRange}
                 onClear={() => {
@@ -169,6 +183,7 @@ export function CategoryPage() {
                 <button
                   onClick={() => {
                     setSelectedColors([]);
+                    setSelectedBrands([]);
                     setPriceRange({ min: 0, max: 15000 });
                   }}
                   className="text-sm text-gold-400 hover:text-gold-300 transition-colors"
@@ -203,6 +218,9 @@ export function CategoryPage() {
                 availableColors={availableColors}
                 selectedColors={selectedColors}
                 toggleColor={toggleColor}
+                availableBrands={availableBrands}
+                selectedBrands={selectedBrands}
+                toggleBrand={brand => setSelectedBrands(prev => prev.includes(brand) ? prev.filter(item => item !== brand) : [...prev, brand])}
                 priceRange={priceRange}
                 setPriceRange={setPriceRange}
                 onClear={() => {
@@ -222,6 +240,9 @@ interface FilterPanelProps {
   availableColors: string[];
   selectedColors: string[];
   toggleColor: (color: string) => void;
+  availableBrands: string[];
+  selectedBrands: string[];
+  toggleBrand: (brand: string) => void;
   priceRange: { min: number; max: number };
   setPriceRange: (range: { min: number; max: number }) => void;
   onClear: () => void;
@@ -231,6 +252,9 @@ function FilterPanel({
   availableColors,
   selectedColors,
   toggleColor,
+  availableBrands,
+  selectedBrands,
+  toggleBrand,
   priceRange,
   setPriceRange,
   onClear,
@@ -270,6 +294,17 @@ function FilterPanel({
             onChange={e => setPriceRange({ ...priceRange, min: Number(e.target.value) })}
             className="w-full accent-gold-500"
           />
+        </div>
+      </div>
+
+      <div>
+        <h4 className="text-sm font-semibold text-cream-100 uppercase tracking-wider mb-3">Brands</h4>
+        <div className="flex flex-wrap gap-2">
+          {availableBrands.map(brand => (
+            <button key={brand} onClick={() => toggleBrand(brand)} className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${selectedBrands.includes(brand) ? 'bg-gold-500 text-ink-950 border-gold-500' : 'bg-ink-800 text-cream-200 border-ink-700 hover:border-gold-500/40'}`}>
+              {brand}
+            </button>
+          ))}
         </div>
       </div>
 

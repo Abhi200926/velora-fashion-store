@@ -28,7 +28,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: 'Midnight Elegance Dress',
-    brand: 'LUXORA Signature',
+    brand: 'Unverified',
     description: 'A timeless black dress crafted from premium crepe fabric with a flattering silhouette. Perfect for evening occasions and cocktail events.',
     price: 2499, originalPrice: 4999, category: 'women',
     tags: ['dress', 'evening', 'black'],
@@ -39,7 +39,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: 'Tailored Charcoal Suit',
-    brand: 'LUXORA Homme',
+    brand: 'Unverified',
     description: 'A sharply tailored two-piece suit in charcoal grey. Features a slim-fit blazer with notch lapels and matching trousers for a refined look.',
     price: 8999, originalPrice: 14999, category: 'men',
     tags: ['suit', 'formal', 'charcoal'],
@@ -50,7 +50,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: 'Street Style Leather Jacket',
-    brand: 'LUXORA Urban',
+    brand: 'Unverified',
     description: 'An edgy biker-style leather jacket with asymmetric zip closure. Made from genuine lamb leather with quilted shoulders for extra style.',
     price: 5999, originalPrice: 9999, category: 'women',
     tags: ['jacket', 'leather', 'biker'],
@@ -61,7 +61,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: 'Classic White Sneakers',
-    brand: 'LUXORA Sport',
+    brand: 'Unverified',
     description: 'Minimalist white sneakers with premium leather upper and cushioned sole. Versatile design that pairs with any outfit.',
     price: 2999, originalPrice: 4999, category: 'footwear',
     tags: ['sneakers', 'white', 'casual'],
@@ -72,7 +72,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: 'Quilted Luxe Handbag',
-    brand: 'LUXORA Luxe',
+    brand: 'Unverified',
     description: 'A sophisticated quilted handbag with gold-tone chain strap and magnetic closure. Spacious interior with multiple compartments.',
     price: 4499, originalPrice: 7999, category: 'bags',
     tags: ['handbag', 'quilted', 'chain'],
@@ -83,7 +83,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: 'Aviator Gold Sunglasses',
-    brand: 'LUXORA Eyewear',
+    brand: 'Unverified',
     description: 'Classic aviator sunglasses with gold metal frame and gradient lenses. UV400 protection with a timeless design.',
     price: 1499, originalPrice: 2999, category: 'accessories',
     tags: ['sunglasses', 'aviator', 'gold'],
@@ -94,7 +94,7 @@ export const products: Product[] = [
   {
     id: 7,
     name: 'Studio Black Gown',
-    brand: 'LUXORA Signature',
+    brand: 'Unverified',
     description: 'A dramatic floor-length black gown with a cinched waist and flowing skirt. Designed for red carpet moments and grand celebrations.',
     price: 12999, originalPrice: 21999, category: 'women',
     tags: ['gown', 'evening', 'luxury'],
@@ -105,7 +105,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: 'Mint Tailored Blazer',
-    brand: 'LUXORA Homme',
+    brand: 'Unverified',
     description: 'A fresh mint-green blazer with a tailored fit. Features notch lapels, flap pockets, and a fully lined interior.',
     price: 5499, originalPrice: 8999, category: 'men',
     tags: ['blazer', 'mint', 'formal'],
@@ -116,7 +116,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: 'Nautical Kids Set',
-    brand: 'LUXORA Junior',
+    brand: 'Unverified',
     description: 'A charming nautical-themed outfit set for kids. Includes a striped top and shorts in breathable cotton fabric.',
     price: 1299, originalPrice: 2499, category: 'kids',
     tags: ['set', 'nautical', 'cotton'],
@@ -127,7 +127,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: 'Premium Black Sneakers',
-    brand: 'LUXORA Sport',
+    brand: 'Unverified',
     description: 'Sleek all-black sneakers with premium mesh upper and rubber outsole. Designed for comfort and urban style.',
     price: 3499, originalPrice: 5999, category: 'footwear',
     tags: ['sneakers', 'black', 'urban'],
@@ -138,7 +138,7 @@ export const products: Product[] = [
   {
     id: 11,
     name: 'Red Leather Statement Bag',
-    brand: 'LUXORA Luxe',
+    brand: 'Unverified',
     description: 'A bold red leather handbag with top handle and detachable strap. Eye-catching design that elevates any outfit.',
     price: 3799, originalPrice: 6499, category: 'bags',
     tags: ['handbag', 'red', 'leather'],
@@ -149,7 +149,7 @@ export const products: Product[] = [
   {
     id: 12,
     name: 'Gold Wristwatch',
-    brand: 'LUXORA Time',
+    brand: 'Unverified',
     description: 'An elegant gold-tone wristwatch with minimalist dial and leather strap. A perfect blend of sophistication and functionality.',
     price: 2999, originalPrice: 5999, category: 'accessories',
     tags: ['watch', 'gold', 'leather strap'],
@@ -160,7 +160,7 @@ export const products: Product[] = [
   {
     id: 13,
     name: 'Urban Leather Coat',
-    brand: 'LUXORA Urban',
+    brand: 'Unverified',
     description: 'A sophisticated long leather coat perfect for winter. Features a belted waist and premium finish for a bold statement.',
     price: 7999, originalPrice: 13999, category: 'women',
     tags: ['coat', 'leather', 'winter'],
@@ -171,7 +171,7 @@ export const products: Product[] = [
   {
     id: 14,
     name: 'Designer Sunglasses & Gold Chain',
-    brand: 'LUXORA Eyewear',
+    brand: 'Unverified',
     description: 'A stylish combo featuring oversized sunglasses and a layered gold chain necklace. The ultimate accessorizing duo.',
     price: 2199, originalPrice: 3999, category: 'accessories',
     tags: ['sunglasses', 'necklace', 'combo'],
@@ -182,7 +182,7 @@ export const products: Product[] = [
   {
     id: 15,
     name: 'Navy Blue Sneakers',
-    brand: 'LUXORA Sport',
+    brand: 'Unverified',
     description: 'Deep navy blue sneakers with retro-inspired design. Comfortable cushioning and durable outsole for everyday wear.',
     price: 2799, originalPrice: 4499, category: 'footwear',
     tags: ['sneakers', 'navy', 'retro'],
@@ -193,7 +193,7 @@ export const products: Product[] = [
   {
     id: 16,
     name: 'Elegant Blue Dress',
-    brand: 'LUXORA Signature',
+    brand: 'Unverified',
     description: 'A flowing blue midi dress with a cinched waist and pleated skirt. Crafted from soft satin for graceful movement.',
     price: 3299, originalPrice: 5999, category: 'women',
     tags: ['dress', 'blue', 'satin'],
@@ -204,7 +204,7 @@ export const products: Product[] = [
   {
     id: 17,
     name: 'Brown Tailored Suit',
-    brand: 'LUXORA Homme',
+    brand: 'Unverified',
     description: 'A distinguished brown suit with peak lapels and tailored trousers. Includes a matching waistcoat for a complete formal look.',
     price: 10999, originalPrice: 17999, category: 'men',
     tags: ['suit', 'brown', 'three-piece'],
@@ -215,7 +215,7 @@ export const products: Product[] = [
   {
     id: 18,
     name: 'Kids Denim & Shades',
-    brand: 'LUXORA Junior',
+    brand: 'Unverified',
     description: 'A cool kids outfit featuring a denim jacket and matching sunglasses. Perfect for stylish little ones who love to stand out.',
     price: 1799, originalPrice: 2999, category: 'kids',
     tags: ['denim', 'sunglasses', 'casual'],
@@ -226,7 +226,7 @@ export const products: Product[] = [
   {
     id: 19,
     name: 'Minimalist Leather Jacket',
-    brand: 'LUXORA Urban',
+    brand: 'Unverified',
     description: 'A premium leather jacket with clean lines and minimal detailing. Crafted from full-grain leather with a soft inner lining.',
     price: 6499, originalPrice: 10999, category: 'men',
     tags: ['jacket', 'leather', 'minimal'],
@@ -237,7 +237,7 @@ export const products: Product[] = [
   {
     id: 20,
     name: 'Boutique Designer Handbag Set',
-    brand: 'LUXORA Luxe',
+    brand: 'Unverified',
     description: 'A curated set of designer handbags in crocodile-textured leather. Includes two sizes for versatile styling options.',
     price: 8999, originalPrice: 14999, category: 'bags',
     tags: ['handbag', 'set', 'designer'],
@@ -248,7 +248,7 @@ export const products: Product[] = [
   {
     id: 21,
     name: 'Urban Street Style Outfit',
-    brand: 'LUXORA Urban',
+    brand: 'Unverified',
     description: 'A complete street-style outfit featuring a leather jacket, top, and accessories. Designed for the fashion-forward urban woman.',
     price: 4999, originalPrice: 8999, category: 'women',
     tags: ['street', 'leather', 'urban'],
@@ -259,7 +259,7 @@ export const products: Product[] = [
   {
     id: 22,
     name: 'Stylish Sunglasses & Watch Combo',
-    brand: 'LUXORA Eyewear',
+    brand: 'Unverified',
     description: 'A premium combo of designer sunglasses and a gold-tone watch. The perfect gift set for the style-conscious individual.',
     price: 3499, originalPrice: 6999, category: 'accessories',
     tags: ['sunglasses', 'watch', 'combo', 'gift'],
@@ -270,7 +270,7 @@ export const products: Product[] = [
   {
     id: 23,
     name: 'White Festive Kurta Shirt',
-    brand: 'LUXORA Homme',
+    brand: 'Unverified',
     description: 'A crisp white kurta-style shirt with contemporary detailing. Perfect for festive occasions and smart-casual events.',
     price: 2299, originalPrice: 3999, category: 'men',
     tags: ['shirt', 'white', 'festive'],
@@ -281,7 +281,7 @@ export const products: Product[] = [
   {
     id: 24,
     name: 'Navy Blue Bodycon Dress',
-    brand: 'LUXORA Signature',
+    brand: 'Unverified',
     description: 'A stunning navy blue bodycon dress with a sophisticated neckline. Made from stretch fabric for a perfect fit.',
     price: 3799, originalPrice: 6499, category: 'women',
     tags: ['dress', 'navy', 'bodycon'],
@@ -292,7 +292,7 @@ export const products: Product[] = [
   {
     id: 25,
     name: 'Kids Smart Party Outfit',
-    brand: 'LUXORA Junior',
+    brand: 'Unverified',
     description: 'A trendy kids outfit featuring a smart shirt and trousers. Perfect for birthday parties and special occasions.',
     price: 1599, originalPrice: 2799, category: 'kids',
     tags: ['shirt', 'trousers', 'party'],
@@ -303,7 +303,7 @@ export const products: Product[] = [
   {
     id: 26,
     name: 'Studio Chic Black Dress',
-    brand: 'LUXORA Signature',
+    brand: 'Unverified',
     description: 'A chic black dress with modern tailoring and subtle detailing. A versatile piece that transitions from day to night effortlessly.',
     price: 2999, originalPrice: 5499, category: 'women',
     tags: ['dress', 'black', 'versatile'],
@@ -313,7 +313,7 @@ export const products: Product[] = [
   },
   // ===== 27-40: WOMEN =====
   {
-    id: 27, name: 'Polka Dot Wrap Dress', brand: 'LUXORA Signature',
+    id: 27, name: 'Polka Dot Wrap Dress', brand: 'Unverified',
     description: 'A playful polka dot wrap dress with a flattering V-neck and tie waist. Crafted from lightweight crepe for all-day comfort.',
     price: 2199, originalPrice: 3999, category: 'women',
     tags: ['dress', 'polka', 'wrap'], image: P + '10119351/pexels-photo-10119351.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -321,7 +321,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 168, stock: 14, isNewArrival: true,
   },
   {
-    id: 28, name: 'Floral Black Midi Dress', brand: 'LUXORA Signature',
+    id: 28, name: 'Floral Black Midi Dress', brand: 'Unverified',
     description: 'A charming black midi dress with delicate floral accents. Features a fitted bodice and A-line skirt for a feminine silhouette.',
     price: 2899, originalPrice: 4999, category: 'women',
     tags: ['dress', 'floral', 'midi'], image: P + '10119335/pexels-photo-10119335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -329,7 +329,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 112, stock: 9,
   },
   {
-    id: 29, name: 'Emerald Green Cocktail Dress', brand: 'LUXORA Signature',
+    id: 29, name: 'Emerald Green Cocktail Dress', brand: 'Unverified',
     description: 'An emerald green cocktail dress with a structured bodice and elegant drape. Perfect for weddings and evening soirées.',
     price: 3999, originalPrice: 6999, category: 'women',
     tags: ['dress', 'green', 'cocktail'], image: P + '11825629/pexels-photo-11825629.png?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -337,7 +337,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 89, stock: 7, isBestseller: true,
   },
   {
-    id: 30, name: 'Satin Blue Gown', brand: 'LUXORA Signature',
+    id: 30, name: 'Satin Blue Gown', brand: 'Unverified',
     description: 'A luxurious satin gown in deep blue with a cowl neckline and thigh-high slit. Designed for gala evenings and grand events.',
     price: 9999, originalPrice: 16999, category: 'women',
     tags: ['gown', 'satin', 'blue'], image: P + '31046828/pexels-photo-31046828.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -345,7 +345,7 @@ export const products: Product[] = [
     rating: 4.8, reviewCount: 67, stock: 4, isLuxury: true, isNewArrival: true,
   },
   {
-    id: 31, name: 'Crimson Red Evening Gown', brand: 'LUXORA Signature',
+    id: 31, name: 'Crimson Red Evening Gown', brand: 'Unverified',
     description: 'A striking red gown with a draped silhouette and train. Crafted to command attention at every red carpet event.',
     price: 11999, originalPrice: 19999, category: 'women',
     tags: ['gown', 'red', 'evening'], image: P + '35661020/pexels-photo-35661020.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -353,7 +353,7 @@ export const products: Product[] = [
     rating: 4.9, reviewCount: 54, stock: 3, isLuxury: true,
   },
   {
-    id: 32, name: 'Burgundy Velvet Gown', brand: 'LUXORA Signature',
+    id: 32, name: 'Burgundy Velvet Gown', brand: 'Unverified',
     description: 'A rich burgundy velvet gown with a deep neckline and flowing skirt. Luxurious texture for winter celebrations.',
     price: 8999, originalPrice: 14999, category: 'women',
     tags: ['gown', 'burgundy', 'velvet'], image: P + '9942927/pexels-photo-9942927.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -361,7 +361,7 @@ export const products: Product[] = [
     rating: 4.7, reviewCount: 72, stock: 6, isLuxury: true,
   },
   {
-    id: 33, name: 'Vintage Pink Tea Dress', brand: 'LUXORA Signature',
+    id: 33, name: 'Vintage Pink Tea Dress', brand: 'Unverified',
     description: 'A vintage-inspired pink dress with gloves and hat combo. Channel old-world glamour with this statement ensemble.',
     price: 4599, originalPrice: 7999, category: 'women',
     tags: ['dress', 'pink', 'vintage'], image: P + '30661468/pexels-photo-30661468.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -369,7 +369,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 48, stock: 8, isNewArrival: true,
   },
   {
-    id: 34, name: 'Red Hat Statement Dress', brand: 'LUXORA Signature',
+    id: 34, name: 'Red Hat Statement Dress', brand: 'Unverified',
     description: 'A bold red dress paired with a wide-brimmed hat for a dramatic runway look. Perfect for fashion-forward occasions.',
     price: 3699, originalPrice: 6499, category: 'women',
     tags: ['dress', 'red', 'hat'], image: P + '8086404/pexels-photo-8086404.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -377,7 +377,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 61, stock: 11,
   },
   {
-    id: 35, name: 'Satin Fan Black Dress', brand: 'LUXORA Signature',
+    id: 35, name: 'Satin Fan Black Dress', brand: 'Unverified',
     description: 'An artistic black satin dress with a fan accessory. Inspired by Parisian couture for the sophisticated woman.',
     price: 5299, originalPrice: 8999, category: 'women',
     tags: ['dress', 'satin', 'parisian'], image: P + '21904524/pexels-photo-21904524.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -385,7 +385,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 44, stock: 5, isLuxury: true,
   },
   {
-    id: 36, name: 'Blue Fan Portrait Dress', brand: 'LUXORA Signature',
+    id: 36, name: 'Blue Fan Portrait Dress', brand: 'Unverified',
     description: 'A vibrant blue dress with artistic draping and a fan accent. A conversation starter for art gallery openings.',
     price: 3499, originalPrice: 5999, category: 'women',
     tags: ['dress', 'blue', 'artistic'], image: P + '30296762/pexels-photo-30296762.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -393,7 +393,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 39, stock: 10, isNewArrival: true,
   },
   {
-    id: 37, name: 'Poised Black Evening Dress', brand: 'LUXORA Signature',
+    id: 37, name: 'Poised Black Evening Dress', brand: 'Unverified',
     description: 'A poised black evening dress with an elegant drape. Timeless design that never goes out of style.',
     price: 3199, originalPrice: 5499, category: 'women',
     tags: ['dress', 'black', 'evening'], image: P + '38959988/pexels-photo-38959988.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -401,7 +401,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 83, stock: 12, isBestseller: true,
   },
   {
-    id: 38, name: 'Black & Blue Couture Dress', brand: 'LUXORA Signature',
+    id: 38, name: 'Black & Blue Couture Dress', brand: 'Unverified',
     description: 'A couture-level dress blending black and blue tones with a structured silhouette. For the woman who owns every room.',
     price: 6999, originalPrice: 11999, category: 'women',
     tags: ['dress', 'couture', 'blue'], image: P + '14724697/pexels-photo-14724697.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -426,7 +426,7 @@ export const products: Product[] = [
   },
   // ===== 41-55: MEN =====
   {
-    id: 41, name: 'Denim on Denim Outfit', brand: 'LUXORA Urban',
+    id: 41, name: 'Denim on Denim Outfit', brand: 'Unverified',
     description: 'A double denim look featuring a denim shirt and jeans. A classic rugged combination for the modern man.',
     price: 3499, originalPrice: 5999, category: 'men',
     tags: ['denim', 'shirt', 'jeans'], image: P + '28938765/pexels-photo-28938765.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -434,7 +434,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 178, stock: 15, isNewArrival: true,
   },
   {
-    id: 42, name: 'Ripped Jeans & Denim Shirt', brand: 'LUXORA Urban',
+    id: 42, name: 'Ripped Jeans & Denim Shirt', brand: 'Unverified',
     description: 'A casual combo with ripped jeans and a denim shirt. Edgy street style for weekend outings.',
     price: 2999, originalPrice: 4999, category: 'men',
     tags: ['jeans', 'ripped', 'casual'], image: P + '10004179/pexels-photo-10004179.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -442,7 +442,7 @@ export const products: Product[] = [
     rating: 4.2, reviewCount: 203, stock: 18, isBestseller: true,
   },
   {
-    id: 43, name: 'Denim & Sunglasses Casual', brand: 'LUXORA Urban',
+    id: 43, name: 'Denim & Sunglasses Casual', brand: 'Unverified',
     description: 'A laid-back denim outfit styled with sunglasses. Effortlessly cool for everyday street fashion.',
     price: 2599, originalPrice: 4499, category: 'men',
     tags: ['denim', 'casual', 'sunglasses'], image: P + '4258605/pexels-photo-4258605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -450,7 +450,7 @@ export const products: Product[] = [
     rating: 4.1, reviewCount: 145, stock: 22,
   },
   {
-    id: 44, name: 'Studio Denim Set', brand: 'LUXORA Urban',
+    id: 44, name: 'Studio Denim Set', brand: 'Unverified',
     description: 'A polished denim outfit set for a studio-ready look. Clean tailoring meets casual comfort.',
     price: 3299, originalPrice: 5499, category: 'men',
     tags: ['denim', 'set', 'studio'], image: P + '30133696/pexels-photo-30133696.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -458,7 +458,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 87, stock: 12, isNewArrival: true,
   },
   {
-    id: 45, name: 'White Tee & Denim Shorts', brand: 'LUXORA Urban',
+    id: 45, name: 'White Tee & Denim Shorts', brand: 'Unverified',
     description: 'A summer-ready white t-shirt with denim shorts. Breathable and comfortable for warm-weather adventures.',
     price: 1499, originalPrice: 2799, category: 'men',
     tags: ['tshirt', 'shorts', 'summer'], image: P + '18139574/pexels-photo-18139574.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -466,7 +466,7 @@ export const products: Product[] = [
     rating: 4.0, reviewCount: 234, stock: 30,
   },
   {
-    id: 46, name: 'Casual Indoor Shirt', brand: 'LUXORA Urban',
+    id: 46, name: 'Casual Indoor Shirt', brand: 'Unverified',
     description: 'A stylish casual shirt perfect for indoor gatherings and relaxed weekends. Soft cotton blend with a modern fit.',
     price: 1799, originalPrice: 2999, category: 'men',
     tags: ['shirt', 'casual', 'cotton'], image: P + '775771/pexels-photo-775771.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -474,7 +474,7 @@ export const products: Product[] = [
     rating: 4.2, reviewCount: 167, stock: 19, isNewArrival: true,
   },
   {
-    id: 47, name: 'Red Casual Shirt & Jeans', brand: 'LUXORA Urban',
+    id: 47, name: 'Red Casual Shirt & Jeans', brand: 'Unverified',
     description: 'A bold red shirt paired with classic jeans. Make a statement with this vibrant everyday outfit.',
     price: 1999, originalPrice: 3499, category: 'men',
     tags: ['shirt', 'red', 'jeans'], image: P + '28920241/pexels-photo-28920241.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -482,7 +482,7 @@ export const products: Product[] = [
     rating: 4.1, reviewCount: 112, stock: 16,
   },
   {
-    id: 48, name: 'Leather Jacket & Yellow Tee', brand: 'LUXORA Urban',
+    id: 48, name: 'Leather Jacket & Yellow Tee', brand: 'Unverified',
     description: 'A rugged leather jacket layered over a bright yellow t-shirt. Bold contrast for the adventurous man.',
     price: 5499, originalPrice: 8999, category: 'men',
     tags: ['jacket', 'leather', 'tshirt'], image: P + '15869823/pexels-photo-15869823.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -490,7 +490,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 89, stock: 8, isBestseller: true,
   },
   {
-    id: 49, name: 'Maroon Velvet Blazer', brand: 'LUXORA Homme',
+    id: 49, name: 'Maroon Velvet Blazer', brand: 'Unverified',
     description: 'A rich maroon velvet blazer with a slim fit. A statement piece for cocktail parties and evening events.',
     price: 6999, originalPrice: 11999, category: 'men',
     tags: ['blazer', 'maroon', 'velvet'], image: P + '38558661/pexels-photo-38558661.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -498,7 +498,7 @@ export const products: Product[] = [
     rating: 4.7, reviewCount: 76, stock: 7, isLuxury: true, isNewArrival: true,
   },
   {
-    id: 50, name: 'Beige Casual Blazer', brand: 'LUXORA Homme',
+    id: 50, name: 'Beige Casual Blazer', brand: 'Unverified',
     description: 'A versatile beige blazer for smart-casual occasions. Lightweight construction with a relaxed shoulder line.',
     price: 4499, originalPrice: 7499, category: 'men',
     tags: ['blazer', 'beige', 'smart-casual'], image: P + '8494615/pexels-photo-8494615.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -506,7 +506,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 103, stock: 11, isNewArrival: true,
   },
   {
-    id: 51, name: 'Black Blazer & Sunglasses', brand: 'LUXORA Homme',
+    id: 51, name: 'Black Blazer & Sunglasses', brand: 'Unverified',
     description: 'A sleek black blazer styled with sunglasses. Channel a modern celebrity look with this sharp ensemble.',
     price: 5999, originalPrice: 9999, category: 'men',
     tags: ['blazer', 'black', 'sunglasses'], image: P + '25409422/pexels-photo-25409422.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -514,7 +514,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 91, stock: 9, isBestseller: true,
   },
   {
-    id: 52, name: 'White Blazer Sophisticate', brand: 'LUXORA Homme',
+    id: 52, name: 'White Blazer Sophisticate', brand: 'Unverified',
     description: 'A crisp white blazer for the distinguished gentleman. Perfect for summer weddings and yacht parties.',
     price: 6499, originalPrice: 10999, category: 'men',
     tags: ['blazer', 'white', 'formal'], image: P + '17732320/pexels-photo-17732320.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -522,7 +522,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 68, stock: 6, isLuxury: true,
   },
   {
-    id: 53, name: 'Black Overcoat Urban', brand: 'LUXORA Homme',
+    id: 53, name: 'Black Overcoat Urban', brand: 'Unverified',
     description: 'A long black overcoat with a clean silhouette. Essential winter outerwear for the stylish urbanite.',
     price: 7499, originalPrice: 12499, category: 'men',
     tags: ['coat', 'black', 'winter'], image: P + '11484908/pexels-photo-11484908.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -530,7 +530,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 84, stock: 8, isNewArrival: true,
   },
   {
-    id: 54, name: 'Turtleneck & Blazer Combo', brand: 'LUXORA Homme',
+    id: 54, name: 'Turtleneck & Blazer Combo', brand: 'Unverified',
     description: 'A sophisticated turtleneck layered under a tailored blazer. The ultimate power-dressing combination.',
     price: 5299, originalPrice: 8999, category: 'men',
     tags: ['turtleneck', 'blazer', 'formal'], image: P + '8033879/pexels-photo-8033879.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -538,7 +538,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 97, stock: 13, isBestseller: true,
   },
   {
-    id: 55, name: 'Black Suit Cufflinks Edition', brand: 'LUXORA Homme',
+    id: 55, name: 'Black Suit Cufflinks Edition', brand: 'Unverified',
     description: 'A refined black suit with cufflink details. Includes a slim-fit jacket and trousers for a complete formal look.',
     price: 9999, originalPrice: 16499, category: 'men',
     tags: ['suit', 'black', 'cufflinks'], image: P + '32001526/pexels-photo-32001526.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -547,7 +547,7 @@ export const products: Product[] = [
   },
   // ===== 56-65: KIDS =====
   {
-    id: 56, name: 'Kids Pink Camera Play Set', brand: 'LUXORA Junior',
+    id: 56, name: 'Kids Pink Camera Play Set', brand: 'Unverified',
     description: 'A playful kids outfit with sunglasses and a toy camera accessory. Fun and fashionable for creative little ones.',
     price: 999, originalPrice: 1799, category: 'kids',
     tags: ['play', 'sunglasses', 'casual'], image: P + '8084066/pexels-photo-8084066.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -555,7 +555,7 @@ export const products: Product[] = [
     rating: 4.1, reviewCount: 45, stock: 24, isNewArrival: true,
   },
   {
-    id: 57, name: 'Kids Vibrant Jacket', brand: 'LUXORA Junior',
+    id: 57, name: 'Kids Vibrant Jacket', brand: 'Unverified',
     description: 'A colorful jacket for kids with a comfortable fit. Perfect for transitional weather and outdoor adventures.',
     price: 1399, originalPrice: 2499, category: 'kids',
     tags: ['jacket', 'colorful', 'outdoor'], image: P + '35484017/pexels-photo-35484017.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -563,7 +563,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 72, stock: 18,
   },
   {
-    id: 58, name: 'Kids Traditional Festive Wear', brand: 'LUXORA Junior',
+    id: 58, name: 'Kids Traditional Festive Wear', brand: 'Unverified',
     description: 'A festive traditional outfit for kids with sunglasses. Perfect for cultural celebrations and family photos.',
     price: 1799, originalPrice: 2999, category: 'kids',
     tags: ['traditional', 'festive', 'sunglasses'], image: P + '40061319/pexels-photo-40061319.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -571,7 +571,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 58, stock: 14, isNewArrival: true,
   },
   {
-    id: 59, name: 'Kids Festival Red Set', brand: 'LUXORA Junior',
+    id: 59, name: 'Kids Festival Red Set', brand: 'Unverified',
     description: 'A festive red outfit set for kids. Celebrate in style with this comfortable and colorful ensemble.',
     price: 1499, originalPrice: 2599, category: 'kids',
     tags: ['festival', 'red', 'set'], image: P + '33768395/pexels-photo-33768395.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -579,7 +579,7 @@ export const products: Product[] = [
     rating: 4.2, reviewCount: 41, stock: 20,
   },
   {
-    id: 60, name: 'Kids Colorful Sweater', brand: 'LUXORA Junior',
+    id: 60, name: 'Kids Colorful Sweater', brand: 'Unverified',
     description: 'A cozy colorful sweater with braided details. Soft knit fabric that keeps little ones warm and stylish.',
     price: 1199, originalPrice: 2199, category: 'kids',
     tags: ['sweater', 'knit', 'colorful'], image: P + '14937556/pexels-photo-14937556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -587,7 +587,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 67, stock: 22, isNewArrival: true,
   },
   {
-    id: 61, name: 'Kids Pink Wardrobe Outfit', brand: 'LUXORA Junior',
+    id: 61, name: 'Kids Pink Wardrobe Outfit', brand: 'Unverified',
     description: 'A stylish pink outfit for little fashionistas. Includes a blouse and matching accessories for a complete look.',
     price: 1099, originalPrice: 1999, category: 'kids',
     tags: ['pink', 'blouse', 'outfit'], image: P + '8083667/pexels-photo-8083667.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -595,7 +595,7 @@ export const products: Product[] = [
     rating: 4.0, reviewCount: 38, stock: 16,
   },
   {
-    id: 62, name: 'Kids Formal Black Suit', brand: 'LUXORA Junior',
+    id: 62, name: 'Kids Formal Black Suit', brand: 'Unverified',
     description: 'A dapper black suit for kids. Perfect for weddings, parties, and formal family events.',
     price: 2499, originalPrice: 4299, category: 'kids',
     tags: ['suit', 'formal', 'black'], image: P + '30690921/pexels-photo-30690921.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -603,7 +603,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 53, stock: 10, isBestseller: true,
   },
   {
-    id: 63, name: 'Kids Wardrobe Fun Set', brand: 'LUXORA Junior',
+    id: 63, name: 'Kids Wardrobe Fun Set', brand: 'Unverified',
     description: 'A cheerful wardrobe outfit set for kids. Multiple pieces that can be mixed and matched for everyday wear.',
     price: 1399, originalPrice: 2499, category: 'kids',
     tags: ['set', 'wardrobe', 'casual'], image: P + '8083844/pexels-photo-8083844.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -611,7 +611,7 @@ export const products: Product[] = [
     rating: 4.1, reviewCount: 29, stock: 18, isNewArrival: true,
   },
   {
-    id: 64, name: 'Kids Group Jackets & Caps', brand: 'LUXORA Junior',
+    id: 64, name: 'Kids Group Jackets & Caps', brand: 'Unverified',
     description: 'A stylish jacket and cap combo for kids. Trendy and practical for outdoor play and weekend outings.',
     price: 1599, originalPrice: 2799, category: 'kids',
     tags: ['jacket', 'cap', 'outdoor'], image: P + '6261908/pexels-photo-6261908.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -619,7 +619,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 44, stock: 15,
   },
   {
-    id: 65, name: 'Kids Winter Coat Portrait', brand: 'LUXORA Junior',
+    id: 65, name: 'Kids Winter Coat Portrait', brand: 'Unverified',
     description: 'A warm winter coat for kids with a classic cut. Premium insulation for cold weather comfort.',
     price: 1899, originalPrice: 3299, category: 'kids',
     tags: ['coat', 'winter', 'warm'], image: P + '35078823/pexels-photo-35078823.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -628,7 +628,7 @@ export const products: Product[] = [
   },
   // ===== 66-75: FOOTWEAR =====
   {
-    id: 66, name: 'Red Stiletto Heels', brand: 'LUXORA Footwear',
+    id: 66, name: 'Red Stiletto Heels', brand: 'Unverified',
     description: 'Striking red stiletto heels with a comfortable padded insole. Designed for special occasions and glamorous evenings.',
     price: 2999, originalPrice: 4999, category: 'footwear',
     tags: ['heels', 'red', 'stiletto'], image: P + '15792209/pexels-photo-15792209.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -636,7 +636,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 178, stock: 14, isBestseller: true,
   },
   {
-    id: 67, name: 'Black Pearl Heels', brand: 'LUXORA Footwear',
+    id: 67, name: 'Black Pearl Heels', brand: 'Unverified',
     description: 'Elegant black high heels with pearl detailing. A sophisticated choice for weddings and formal events.',
     price: 3499, originalPrice: 5999, category: 'footwear',
     tags: ['heels', 'black', 'pearl'], image: P + '9978327/pexels-photo-9978327.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -644,7 +644,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 92, stock: 11, isNewArrival: true,
   },
   {
-    id: 68, name: 'Leather Ankle Boots', brand: 'LUXORA Footwear',
+    id: 68, name: 'Leather Ankle Boots', brand: 'Unverified',
     description: 'Premium brown leather ankle boots with a stacked heel. Versatile design that transitions from day to night.',
     price: 3999, originalPrice: 6999, category: 'footwear',
     tags: ['boots', 'leather', 'ankle'], image: P + '26851197/pexels-photo-26851197.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -652,7 +652,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 134, stock: 9, isBestseller: true,
   },
   {
-    id: 69, name: 'Tan Leather Boots', brand: 'LUXORA Footwear',
+    id: 69, name: 'Tan Leather Boots', brand: 'Unverified',
     description: 'Handcrafted tan leather boots with a cushioned footbed. Durable construction for long-lasting wear.',
     price: 4499, originalPrice: 7499, category: 'footwear',
     tags: ['boots', 'tan', 'leather'], image: P + '36589770/pexels-photo-36589770.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -660,7 +660,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 87, stock: 7, isNewArrival: true,
   },
   {
-    id: 70, name: 'Rhinestone Evening Heels', brand: 'LUXORA Footwear',
+    id: 70, name: 'Rhinestone Evening Heels', brand: 'Unverified',
     description: 'Stunning heels with rhinestone accents on a satin finish. Designed to sparkle at every celebration.',
     price: 4299, originalPrice: 7499, category: 'footwear',
     tags: ['heels', 'rhinestone', 'evening'], image: P + '32851167/pexels-photo-32851167.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -668,7 +668,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 65, stock: 6, isLuxury: true,
   },
   {
-    id: 71, name: 'Stiletto Strap Heels', brand: 'LUXORA Footwear',
+    id: 71, name: 'Stiletto Strap Heels', brand: 'Unverified',
     description: 'Sleek black stiletto heels with ankle straps. Minimalist design that elongates the silhouette.',
     price: 3199, originalPrice: 5499, category: 'footwear',
     tags: ['heels', 'stiletto', 'strap'], image: P + '39457484/pexels-photo-39457484.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -676,7 +676,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 108, stock: 13, isNewArrival: true,
   },
   {
-    id: 72, name: 'Tassel Leather Loafers', brand: 'LUXORA Footwear',
+    id: 72, name: 'Tassel Leather Loafers', brand: 'Unverified',
     description: 'Classic black leather loafers with tassel detailing. Smart-casual footwear for the modern gentleman.',
     price: 3799, originalPrice: 6499, category: 'footwear',
     tags: ['loafers', 'leather', 'tassel'], image: P + '7608463/pexels-photo-7608463.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -684,7 +684,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 143, stock: 16, isBestseller: true,
   },
   {
-    id: 73, name: 'Gold Accent Loafers', brand: 'LUXORA Footwear',
+    id: 73, name: 'Gold Accent Loafers', brand: 'Unverified',
     description: 'Sophisticated black loafers with gold hardware accents. A premium choice for formal and semi-formal occasions.',
     price: 4299, originalPrice: 7299, category: 'footwear',
     tags: ['loafers', 'gold', 'formal'], image: P + '35070982/pexels-photo-35070982.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -692,7 +692,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 78, stock: 10, isLuxury: true, isNewArrival: true,
   },
   {
-    id: 74, name: 'Classic Oxford Dress Shoes', brand: 'LUXORA Footwear',
+    id: 74, name: 'Classic Oxford Dress Shoes', brand: 'Unverified',
     description: 'Timeless black Oxford shoes crafted from polished leather. The cornerstone of formal footwear.',
     price: 3999, originalPrice: 6999, category: 'footwear',
     tags: ['oxford', 'dress', 'leather'], image: P + '15557047/pexels-photo-15557047.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -700,7 +700,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 167, stock: 12,
   },
   {
-    id: 75, name: 'Brown Leather Loafers', brand: 'LUXORA Footwear',
+    id: 75, name: 'Brown Leather Loafers', brand: 'Unverified',
     description: 'Warm brown leather loafers with a hand-stitched finish. Perfect for smart-casual and business casual settings.',
     price: 3499, originalPrice: 5999, category: 'footwear',
     tags: ['loafers', 'brown', 'casual'], image: P + '11985344/pexels-photo-11985344.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -709,7 +709,7 @@ export const products: Product[] = [
   },
   // ===== 76-85: BAGS =====
   {
-    id: 76, name: 'White Chain Handbag', brand: 'LUXORA Luxe',
+    id: 76, name: 'White Chain Handbag', brand: 'Unverified',
     description: 'A pristine white handbag with gold chain details. Elegant and versatile for both day and evening use.',
     price: 3999, originalPrice: 6999, category: 'bags',
     tags: ['handbag', 'white', 'chain'], image: P + '31929486/pexels-photo-31929486.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -717,7 +717,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 104, stock: 11, isNewArrival: true,
   },
   {
-    id: 77, name: 'Navy Blue Top-Handle Bag', brand: 'LUXORA Luxe',
+    id: 77, name: 'Navy Blue Top-Handle Bag', brand: 'Unverified',
     description: 'A structured navy blue handbag with top handle. Compact and sophisticated for everyday luxury.',
     price: 3299, originalPrice: 5799, category: 'bags',
     tags: ['handbag', 'navy', 'top-handle'], image: P + '4830925/pexels-photo-4830925.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -725,7 +725,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 89, stock: 13, isBestseller: true,
   },
   {
-    id: 78, name: 'Brown & Yellow Tote Set', brand: 'LUXORA Luxe',
+    id: 78, name: 'Brown & Yellow Tote Set', brand: 'Unverified',
     description: 'A versatile tote set in warm brown and yellow tones. Multiple bags for different occasions and moods.',
     price: 4799, originalPrice: 8499, category: 'bags',
     tags: ['tote', 'set', 'brown'], image: P + '35666033/pexels-photo-35666033.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -733,7 +733,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 67, stock: 8, isNewArrival: true,
   },
   {
-    id: 79, name: 'Green & Beige Studio Bags', brand: 'LUXORA Luxe',
+    id: 79, name: 'Green & Beige Studio Bags', brand: 'Unverified',
     description: 'A duo of green and beige handbags for the style-conscious. Crafted with premium vegan leather.',
     price: 5299, originalPrice: 9299, category: 'bags',
     tags: ['handbag', 'green', 'beige'], image: P + '22432991/pexels-photo-22432991.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -741,7 +741,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 52, stock: 6, isLuxury: true,
   },
   {
-    id: 80, name: 'Brown Tassel Leather Bag', brand: 'LUXORA Luxe',
+    id: 80, name: 'Brown Tassel Leather Bag', brand: 'Unverified',
     description: 'A stylish brown leather handbag with tassel accent. Spacious interior with organized compartments.',
     price: 3599, originalPrice: 6299, category: 'bags',
     tags: ['handbag', 'tassel', 'brown'], image: P + '12992579/pexels-photo-12992579.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -749,7 +749,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 81, stock: 12, isNewArrival: true,
   },
   {
-    id: 81, name: 'Blue Statement Handbag', brand: 'LUXORA Luxe',
+    id: 81, name: 'Blue Statement Handbag', brand: 'Unverified',
     description: 'A bold blue handbag that adds a pop of color to any outfit. Structured design with a magnetic closure.',
     price: 2999, originalPrice: 4999, category: 'bags',
     tags: ['handbag', 'blue', 'statement'], image: P + '20380724/pexels-photo-20380724.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -757,7 +757,7 @@ export const products: Product[] = [
     rating: 4.2, reviewCount: 73, stock: 17,
   },
   {
-    id: 82, name: 'Silver Chain Evening Bag', brand: 'LUXORA Luxe',
+    id: 82, name: 'Silver Chain Evening Bag', brand: 'Unverified',
     description: 'A silver handbag with chain strap for evening occasions. Compact clutch size with a glamorous finish.',
     price: 3799, originalPrice: 6499, category: 'bags',
     tags: ['handbag', 'silver', 'evening'], image: P + '21263499/pexels-photo-21263499.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -765,7 +765,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 49, stock: 9, isLuxury: true, isNewArrival: true,
   },
   {
-    id: 83, name: 'Leather Scarf Detail Bag', brand: 'LUXORA Luxe',
+    id: 83, name: 'Leather Scarf Detail Bag', brand: 'Unverified',
     description: 'A leather handbag with a silk scarf detail on the handle. French-inspired elegance for the everyday.',
     price: 4299, originalPrice: 7499, category: 'bags',
     tags: ['handbag', 'scarf', 'leather'], image: P + '29096397/pexels-photo-29096397.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -773,7 +773,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 58, stock: 7, isBestseller: true,
   },
   {
-    id: 84, name: 'Brown Leather Purse', brand: 'LUXORA Luxe',
+    id: 84, name: 'Brown Leather Purse', brand: 'Unverified',
     description: 'A compact brown leather purse with modern design lines. Perfect for essentials on the go.',
     price: 2499, originalPrice: 4299, category: 'bags',
     tags: ['purse', 'brown', 'compact'], image: P + '4830926/pexels-photo-4830926.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -781,7 +781,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 94, stock: 19, isNewArrival: true,
   },
   {
-    id: 85, name: 'Orange Backpack', brand: 'LUXORA Sport',
+    id: 85, name: 'Orange Backpack', brand: 'Unverified',
     description: 'A vibrant orange backpack with multiple compartments. Water-resistant fabric with padded laptop sleeve.',
     price: 1999, originalPrice: 3499, category: 'bags',
     tags: ['backpack', 'orange', 'travel'], image: P + '14285243/pexels-photo-14285243.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -790,7 +790,7 @@ export const products: Product[] = [
   },
   // ===== 86-95: ACCESSORIES =====
   {
-    id: 86, name: 'Gold Jewelry Collection', brand: 'LUXORA Accessories',
+    id: 86, name: 'Gold Jewelry Collection', brand: 'Unverified',
     description: 'A curated gold jewelry set including chains, rings, and a watch. The ultimate luxury accessorizing collection.',
     price: 5999, originalPrice: 9999, category: 'accessories',
     tags: ['jewelry', 'gold', 'set'], image: P + '8706576/pexels-photo-8706576.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -798,7 +798,7 @@ export const products: Product[] = [
     rating: 4.7, reviewCount: 88, stock: 8, isLuxury: true, isNewArrival: true,
   },
   {
-    id: 87, name: 'Elegant Jewelry Stand Set', brand: 'LUXORA Accessories',
+    id: 87, name: 'Elegant Jewelry Stand Set', brand: 'Unverified',
     description: 'A versatile jewelry set displayed on an elegant stand. Includes earrings, necklace, and bracelet.',
     price: 2499, originalPrice: 4499, category: 'accessories',
     tags: ['jewelry', 'earrings', 'necklace'], image: P + '13219289/pexels-photo-13219289.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -806,7 +806,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 112, stock: 18,
   },
   {
-    id: 88, name: 'Watch & Beaded Bracelet Set', brand: 'LUXORA Time',
+    id: 88, name: 'Watch & Beaded Bracelet Set', brand: 'Unverified',
     description: 'A stylish wristwatch paired with colorful beaded bracelets. A fun and fashionable accessory combo.',
     price: 1999, originalPrice: 3499, category: 'accessories',
     tags: ['watch', 'bracelet', 'beaded'], image: P + '13155695/pexels-photo-13155695.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -814,7 +814,7 @@ export const products: Product[] = [
     rating: 4.2, reviewCount: 78, stock: 21, isNewArrival: true,
   },
   {
-    id: 89, name: 'Gold & Pearl Jewelry Box', brand: 'LUXORA Accessories',
+    id: 89, name: 'Gold & Pearl Jewelry Box', brand: 'Unverified',
     description: 'A luxury jewelry box with gold and pearl pieces. Includes earrings, necklace, and brooch in a velvet case.',
     price: 4499, originalPrice: 7999, category: 'accessories',
     tags: ['jewelry', 'pearl', 'luxury'], image: P + '8706554/pexels-photo-8706554.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -822,7 +822,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 54, stock: 7, isLuxury: true, isBestseller: true,
   },
   {
-    id: 90, name: 'Gold Chains & Watches Set', brand: 'LUXORA Time',
+    id: 90, name: 'Gold Chains & Watches Set', brand: 'Unverified',
     description: 'A premium set of gold chains and wristwatches. Elevate your accessory game with this coordinated collection.',
     price: 6999, originalPrice: 11999, category: 'accessories',
     tags: ['watch', 'chain', 'gold'], image: P + '8705767/pexels-photo-8705767.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -830,7 +830,7 @@ export const products: Product[] = [
     rating: 4.7, reviewCount: 41, stock: 5, isLuxury: true,
   },
   {
-    id: 91, name: 'Jewelry Flat Lay Set', brand: 'LUXORA Accessories',
+    id: 91, name: 'Jewelry Flat Lay Set', brand: 'Unverified',
     description: 'A beautifully arranged jewelry set including rings, earrings, and a delicate chain. Everyday elegance.',
     price: 1799, originalPrice: 2999, category: 'accessories',
     tags: ['jewelry', 'rings', 'earrings'], image: P + '4004225/pexels-photo-4004225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -838,7 +838,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 103, stock: 25, isNewArrival: true,
   },
   {
-    id: 92, name: 'Sweater Watch & Necklace Combo', brand: 'LUXORA Time',
+    id: 92, name: 'Sweater Watch & Necklace Combo', brand: 'Unverified',
     description: 'A cozy combo featuring a wristwatch and layered necklace. Perfect for autumn styling.',
     price: 2299, originalPrice: 3999, category: 'accessories',
     tags: ['watch', 'necklace', 'autumn'], image: P + '1374128/pexels-photo-1374128.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -846,7 +846,7 @@ export const products: Product[] = [
     rating: 4.4, reviewCount: 86, stock: 14,
   },
   {
-    id: 93, name: 'Dark Backdrop Jewelry Set', brand: 'LUXORA Accessories',
+    id: 93, name: 'Dark Backdrop Jewelry Set', brand: 'Unverified',
     description: 'An elegant jewelry set photographed against a dark backdrop. Statement pieces for evening wear.',
     price: 3299, originalPrice: 5999, category: 'accessories',
     tags: ['jewelry', 'evening', 'statement'], image: P + '37230370/pexels-photo-37230370.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -854,7 +854,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 47, stock: 10, isLuxury: true, isNewArrival: true,
   },
   {
-    id: 94, name: 'Womens Fashion Accessory Set', brand: 'LUXORA Accessories',
+    id: 94, name: 'Womens Fashion Accessory Set', brand: 'Unverified',
     description: 'A comprehensive women\'s accessory set with earrings, necklace, and bracelet. Coordinated for effortless styling.',
     price: 1499, originalPrice: 2799, category: 'accessories',
     tags: ['accessory', 'women', 'set'], image: P + '34786962/pexels-photo-34786962.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -862,7 +862,7 @@ export const products: Product[] = [
     rating: 4.1, reviewCount: 134, stock: 28, isBestseller: true,
   },
   {
-    id: 95, name: 'Pink Backpack Duo', brand: 'LUXORA Sport',
+    id: 95, name: 'Pink Backpack Duo', brand: 'Unverified',
     description: 'A set of two pink backpacks in different sizes. Perfect for school, travel, and everyday use.',
     price: 1799, originalPrice: 2999, category: 'accessories',
     tags: ['backpack', 'pink', 'set'], image: P + '8330659/pexels-photo-8330659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -871,7 +871,7 @@ export const products: Product[] = [
   },
   // ===== 96-100: WOMEN WINTER + EXTRA =====
   {
-    id: 96, name: 'White Sweater & Black Coat', brand: 'LUXORA Urban',
+    id: 96, name: 'White Sweater & Black Coat', brand: 'Unverified',
     description: 'A cozy white knit sweater paired with a black wool coat. The perfect winter layering combination.',
     price: 5499, originalPrice: 9499, category: 'women',
     tags: ['sweater', 'coat', 'winter'], image: P + '19354454/pexels-photo-19354454.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -879,7 +879,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 112, stock: 10, isBestseller: true,
   },
   {
-    id: 97, name: 'Winter Warm Coat Set', brand: 'LUXORA Urban',
+    id: 97, name: 'Winter Warm Coat Set', brand: 'Unverified',
     description: 'A complete winter outfit with coat and sweater. Designed for maximum warmth without compromising style.',
     price: 6299, originalPrice: 10999, category: 'women',
     tags: ['coat', 'winter', 'warm'], image: P + '14416461/pexels-photo-14416461.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -887,7 +887,7 @@ export const products: Product[] = [
     rating: 4.6, reviewCount: 83, stock: 8, isNewArrival: true,
   },
   {
-    id: 98, name: 'Brown Trench Coat', brand: 'LUXORA Urban',
+    id: 98, name: 'Brown Trench Coat', brand: 'Unverified',
     description: 'A classic brown trench coat with belt and lapel. Timeless outerwear that elevates any outfit.',
     price: 4999, originalPrice: 8499, category: 'women',
     tags: ['coat', 'trench', 'brown'], image: P + '6512718/pexels-photo-6512718.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -895,7 +895,7 @@ export const products: Product[] = [
     rating: 4.5, reviewCount: 97, stock: 11, isBestseller: true,
   },
   {
-    id: 99, name: 'Patterned Knit Sweater', brand: 'LUXORA Urban',
+    id: 99, name: 'Patterned Knit Sweater', brand: 'Unverified',
     description: 'A black and white patterned sweater with a relaxed fit. Cozy and chic for autumn and winter days.',
     price: 2299, originalPrice: 3999, category: 'women',
     tags: ['sweater', 'knit', 'patterned'], image: P + '31278467/pexels-photo-31278467.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -903,7 +903,7 @@ export const products: Product[] = [
     rating: 4.3, reviewCount: 76, stock: 16, isNewArrival: true,
   },
   {
-    id: 100, name: 'Winter Knit Hat & Sweater', brand: 'LUXORA Urban',
+    id: 100, name: 'Winter Knit Hat & Sweater', brand: 'Unverified',
     description: 'A warm knit hat paired with a cozy sweater. Complete winter essentials for the fashion-forward woman.',
     price: 1899, originalPrice: 3299, category: 'women',
     tags: ['hat', 'sweater', 'winter'], image: P + '37902784/pexels-photo-37902784.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
