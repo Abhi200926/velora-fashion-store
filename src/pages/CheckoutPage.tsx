@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft, CreditCard, Smartphone, Wallet, Lock, Check, ChevronRight,
-  ShieldCheck, MapPin, Package, Loader2,
+  ShieldCheck, MapPin, Package, Loader2, Building2,
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useCurrency } from '@/context/CurrencyContext';
@@ -104,7 +104,7 @@ export function CheckoutPage() {
         payment_provider: isCod ? 'cod' : 'razorpay',
         shipping_address: shippingAddress,
         user_id: user.id,
-      }
+      };
 
       const { data: orderData, error: orderError } = await supabase
         .from('orders')
@@ -303,45 +303,36 @@ export function CheckoutPage() {
                 <h2 className="text-lg font-serif text-cream-50">Payment Method</h2>
               </div>
               <div className="space-y-3">
-                <PaymentOption active={paymentMethod === 'card'} onClick={() => setPaymentMethod('card')} icon={CreditCard} title="Credit / Debit Card" subtitle="Visa, Mastercard, RuPay, Amex" />
-                {paymentMethod === 'card' && (
-                  <div className="bg-ink-800/50 border border-ink-700 rounded-lg p-4 space-y-4 animate-fade-in">
-                    <Field label="Card Number" value={card.number} onChange={v => setCard({ ...card, number: formatCardNumber(v) })} placeholder="1234 5678 9012 3456" />
-                    <Field label="Name on Card" value={card.name} onChange={v => setCard({ ...card, name: v })} placeholder="AARAV SHARMA" />
-                    <div className="grid grid-cols-2 gap-4">
-                      <Field label="Expiry (MM/YY)" value={card.expiry} onChange={v => setCard({ ...card, expiry: formatExpiry(v) })} placeholder="12/28" />
-                      <Field label="CVV" value={card.cvv} onChange={v => setCard({ ...card, cvv: v.replace(/\D/g, '').slice(0, 4) })} placeholder="123" type="password" />
-                    </div>
-                  </div>
-                )}
-                <PaymentOption active={paymentMethod === 'upi'} onClick={() => setPaymentMethod('upi')} icon={Smartphone} title="UPI" subtitle="Google Pay, PhonePe, Paytm, BHIM" />
-                {paymentMethod === 'upi' && (
-                  <div className="bg-ink-800/50 border border-ink-700 rounded-lg p-4 space-y-4 animate-fade-in">
-                    <Field label="UPI ID" value={upiId} onChange={setUpiId} placeholder="aarav@okhdfcbank" />
-                    <div className="flex flex-wrap gap-2">
-                      {['@okhdfcbank', '@oksbi', '@okaxis', '@ybl'].map(suffix => (
-                        <button key={suffix} type="button" onClick={() => setUpiId(prev => prev.includes('@') ? prev : prev + suffix)} className="text-xs px-3 py-1.5 bg-ink-700 text-neutral-300 rounded-full hover:bg-ink-600 transition-colors">
-                          {suffix}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <PaymentOption active={paymentMethod === 'card'} onClick={() => setPaymentMethod('card')} icon={CreditCard} title="Credit / Debit Card" subtitle="Visa, Mastercard, RuPay, Amex — secure checkout via Razorpay" />
+                <PaymentOption active={paymentMethod === 'upi'} onClick={() => setPaymentMethod('upi')} icon={Smartphone} title="UPI" subtitle="Google Pay, PhonePe, Paytm, BHIM — secure checkout via Razorpay" />
+                <PaymentOption active={paymentMethod === 'netbanking'} onClick={() => setPaymentMethod('netbanking')} icon={Building2} title="Net Banking" subtitle="All major Indian banks — secure checkout via Razorpay" />
                 <PaymentOption active={paymentMethod === 'cod'} onClick={() => setPaymentMethod('cod')} icon={Wallet} title="Cash on Delivery" subtitle="Pay in cash when your order arrives" />
               </div>
-              <div className="flex items-center gap-2 text-xs text-neutral-400 pt-2">
-                <ShieldCheck className="w-4 h-4 text-green-400" />
-                Your payment information is encrypted and secure. This is a test transaction — no real charges will be made.
-              </div>
+              {paymentMethod !== 'cod' && (
+                <div className="bg-gold-500/5 border border-gold-500/20 rounded-lg p-4 flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                  <div className="text-xs text-neutral-300 leading-relaxed">
+                    <p className="text-gold-400 font-medium mb-1">Razorpay Test Mode</p>
+                    <p>You will be redirected to Razorpay's secure checkout. Card numbers, CVV, and UPI PINs are entered directly on Razorpay's encrypted page — LUXORA never sees or stores them.</p>
+                    {!user && <p className="text-amber-400 mt-2">You must be signed in to use online payment.</p>}
+                  </div>
+                </div>
+              )}
+              {paymentMethod === 'cod' && (
+                <div className="flex items-center gap-2 text-xs text-neutral-400 pt-2">
+                  <ShieldCheck className="w-4 h-4 text-green-400" />
+                  Pay in cash when your order is delivered to your doorstep.
+                </div>
+              )}
               <div className="flex gap-3">
                 <button type="button" onClick={() => setStep('address')} className="px-6 py-3.5 bg-ink-800 border border-ink-700 text-cream-100 text-sm font-medium rounded-lg hover:border-gold-500/40 transition-colors">
                   Back
                 </button>
                 <button type="submit" disabled={processing} className="flex-1 py-3.5 bg-gold-500 text-ink-950 text-sm font-semibold rounded-lg hover:bg-gold-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                   {processing ? (
-                    <><Loader2 className="w-4 h-4 animate-spin" />Processing Payment...</>
+                    <><Loader2 className="w-4 h-4 animate-spin" />{paymentMethod === 'cod' ? 'Placing Order...' : 'Opening Secure Checkout...'}</>
                   ) : (
-                    <>Pay {formatPrice(total)}</>
+                    <>{paymentMethod === 'cod' ? `Place Order (${formatPrice(total)})` : `Pay Securely ${formatPrice(total)}`}</>
                   )}
                 </button>
               </div>
